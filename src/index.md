@@ -1,4 +1,4 @@
-# Wakanda Server Side API Reference
+# Wakanda Server v2 API Reference
 
 - [Authentication](interfaces/wakauthentication.html)
 - [Data](interfaces/wakdata.html)

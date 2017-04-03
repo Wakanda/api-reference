@@ -1,0 +1,4 @@
+
+	interface Module {
+		//TODO
+	}

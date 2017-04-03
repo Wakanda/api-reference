@@ -1,0 +1,4 @@
+
+	interface FileWriterSync{
+		//TODO
+	}

@@ -1,4 +1,4 @@
-# Wakanda Server Side API Reference
+# Wakanda Server v1 API Reference
 
 ## Global Scope
 

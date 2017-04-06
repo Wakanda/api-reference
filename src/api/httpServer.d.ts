@@ -105,6 +105,7 @@ interface HttpServer {
      * 
      *     // Get the websocket port
      *     var wsPort = event.ports[0];
+     * 
      *     // Get the websocket handshake data
      *     var client = event.client;
      *     // Is available: client.id, client.port, client.urlPath, client.headers

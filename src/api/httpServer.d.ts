@@ -101,10 +101,13 @@ interface HttpServer {
      * // ./websocket-greetings.js
      * // Same as for ShareWorker
      * // Called every time a new websocket is connected
-     * onconnect = function ( msg ) {
+     * onconnect = function ( event ) {
      * 
      *     // Get the websocket port
-     *     var wsPort = msg.ports[0];
+     *     var wsPort = event.ports[0];
+     *     // Get the websocket handshake data
+     *     var client = event.client;
+     *     // Is available: client.id, client.port, client.urlPath, client.headers
      * 
      *     // Called every time a client sends a message    
      *     wsPort.onmessage = function( message ) {

@@ -108,7 +108,7 @@ interface HttpServer {
      * 
      *     // Get the websocket handshake data
      *     var client = event.client;
-     *     // Is available: client.id, client.port, client.urlPath, client.headers
+     *     // Is available: client.ip, client.port, client.urlPath, client.headers
      * 
      *     // Called every time a client sends a message    
      *     wsPort.onmessage = function( message ) {

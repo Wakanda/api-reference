@@ -200,6 +200,51 @@ interface WAKCore {
      */
     console: WAKConsole;
     /**
+     * Defines a log listener. It calls `log()` function of JS module pass in parameter.
+     * 
+     * ```javascript
+     * // from PROJECT/bootstrap.js
+     * setLogListener('log-listener');
+     *    
+     * // from PROJECT/modules/log-listener/index.js
+     * var mail = require('waf-mail/mail');
+     * 
+     * exports.log = function(logArray) {
+     *     
+     *     logArray.forEach(function(logObject){
+     *         switch(logObject.level)
+     *         {
+     *             case 5: // WARNING log
+     *             case 6: // ERROR log
+     *                 // If error or warning log, then send an alert email to admin
+     *                 var message = new mail.Mail();
+     *                 message.subject = 'Test';
+     *                 message.from = 'application@myCompany.com';
+     *                 message.to = ['admin@myCompany.com'];
+     *                 message.setBody("This is a test message");
+     *                 mail.send({
+     *                     address: 'smtp.gmail.com', 
+     *                     port: 465,
+     *                     isSSL: true,
+     *                     username: 'admin@myCompany.com', 
+     *                     password: 'my-admin-password', 
+     *                     domain: 'gmail.com'
+     *                 }, message);                
+     *                 
+     *                 break;
+     *             default:
+     *                 // Do nothing
+     *                 break;
+     *         }
+     *     });
+     * };
+     * ```
+     * 
+     * @warning Be aware `setLogListener` returns logs from `console.log()`.
+     * @param moduleId @param moduleId Describes the module id and path from `/modules/` directory
+     */
+    setLogListener(moduleId: String): void;
+    /**
      * References the buffer constructor.
      */
     Buffer: WAKBufferInstance;
@@ -3858,10 +3903,14 @@ interface HttpServer {
      * // ./websocket-greetings.js
      * // Same as for ShareWorker
      * // Called every time a new websocket is connected
-     * onconnect = function ( msg ) {
+     * onconnect = function ( event ) {
      * 
      *     // Get the websocket port
-     *     var wsPort = msg.ports[0];
+     *     var wsPort = event.ports[0];
+     * 
+     *     // Get the websocket handshake data
+     *     var client = event.client;
+     *     // Is available: client.ip, client.port, client.urlPath, client.headers
      * 
      *     // Called every time a client sends a message    
      *     wsPort.onmessage = function( message ) {

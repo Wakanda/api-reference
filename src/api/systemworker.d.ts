@@ -34,6 +34,17 @@ interface SystemWorker {
      * var workerProxy = new SystemWorker( 'sh -c ls -la {file_ref}', options);
      * ```
      * 
+     * #### Example 3: Run npm install in a simulated terminal
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     pty : true
+     * };
+     * var workerProxy = new SystemWorker( 'sh -c npm install', options);
+     * ```
+     * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
      * @param cli Command line to execute
      * @param options Describes command line options
@@ -70,6 +81,17 @@ interface SystemWorker {
      *     variables : { ENV_VAR_1 : 'value1' }
      * };
      * var workerProxy = new SystemWorker( ['sh', '-c', 'ls -la {file_ref}'], options);
+     * ```
+     * 
+     * #### Example 3: Run npm install in a simulated terminal
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     pty : true
+     * };
+     * var workerProxy = new SystemWorker( ['sh', '-c', 'npm install'], options);
      * ```
      * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
@@ -113,6 +135,18 @@ interface SystemWorker {
      *     variables : { ENV_VAR_1 : 'value1' }
      * };
      * var workerResult = SystemWorker.exec( 'sh -c ls -la {file_ref}', options);
+     * console.log(workerResult.output.toString());
+     * ```
+     * 
+     * #### Example 5: Run npm install in a simulated terminal
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     pty : true
+     * };
+     * var workerResult = SystemWorker.exec( 'sh -c npm install', options);
      * console.log(workerResult.output.toString());
      * ```
      * 

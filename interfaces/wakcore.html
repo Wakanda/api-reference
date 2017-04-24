@@ -106,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">Buffer<span class="tsd-signature-symbol">:</span> <a href="wakbufferinstance.html" class="tsd-signature-type">WAKBufferInstance</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/763cff4/src/api/application.d.ts#L153">application.d.ts:153</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L163">application.d.ts:163</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -121,7 +121,7 @@
 					<div class="tsd-signature tsd-kind-icon">console<span class="tsd-signature-symbol">:</span> <a href="wakconsole.html" class="tsd-signature-type">WAKConsole</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/763cff4/src/api/application.d.ts#L104">application.d.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L104">application.d.ts:104</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -143,7 +143,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/763cff4/src/api/application.d.ts#L177">application.d.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L187">application.d.ts:187</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -198,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/763cff4/src/api/application.d.ts#L164">application.d.ts:164</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L174">application.d.ts:174</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -224,7 +224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/763cff4/src/api/application.d.ts#L168">application.d.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L178">application.d.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,12 +252,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/763cff4/src/api/application.d.ts#L149">application.d.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L159">application.d.ts:159</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Defines a log listener. It calls <code>log()</code> function of JS module pass in parameter.</p>
+									<p>Defines a log listener. It calls the <code>log()</code> function of <code>moduleId</code> JS module.</p>
 								</div>
 								<pre><code class="lang-javascript"><span class="hljs-comment">// from PROJECT/bootstrap.js</span>
 setLogListener(<span class="hljs-string">'log-listener'</span>);
@@ -268,16 +268,26 @@ setLogListener(<span class="hljs-string">'log-listener'</span>);
 exports.log = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">logArray</span>) </span>{
 
     logArray.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">logObject</span>)</span>{
+
+        <span class="hljs-comment">// logObject.level returns the log type</span>
+        <span class="hljs-comment">// logObject.source returns in which file the log occurs</span>
+        <span class="hljs-comment">// logObject.message returns the log message</span>
+
         <span class="hljs-keyword">switch</span>(logObject.level)
         {
+            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-comment">// DEBUG log</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-comment">// INFO log</span>
+                <span class="hljs-comment">// Do nothing</span>
+                <span class="hljs-keyword">break</span>;
             <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-comment">// WARNING log</span>
             <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>: <span class="hljs-comment">// ERROR log</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>: <span class="hljs-comment">// FATAL log</span>
                 <span class="hljs-comment">// If error or warning log, then send an alert email to admin</span>
                 <span class="hljs-keyword">var</span> message = <span class="hljs-keyword">new</span> mail.Mail();
                 message.subject = <span class="hljs-string">'Test'</span>;
                 message.from = <span class="hljs-string">'application@myCompany.com'</span>;
                 message.to = [<span class="hljs-string">'admin@myCompany.com'</span>];
-                message.setBody(<span class="hljs-string">"This is a test message"</span>);
+                message.setBody( logObject.source +<span class="hljs-string">'/n/n'</span>+ logObject.message );
                 mail.send({
                     <span class="hljs-attr">address</span>: <span class="hljs-string">'smtp.gmail.com'</span>,
                     <span class="hljs-attr">port</span>: <span class="hljs-number">465</span>,
@@ -297,7 +307,7 @@ exports.log = <span class="hljs-function"><span class="hljs-keyword">function</s
 </code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>warning</dt>
-									<dd><p>Be aware <code>setLogListener</code> returns logs from <code>console.log()</code>.</p>
+									<dd><p>Do not use <code>console</code> logger inside <code>setLogListener</code> as it will trigger logs too.</p>
 									</dd>
 								</dl>
 							</div>

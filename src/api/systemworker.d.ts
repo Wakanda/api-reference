@@ -159,6 +159,18 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
+     * #### Example 5: Run npm install in a simulated terminal
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     pty : true
+     * };
+     * var workerResult = SystemWorker.exec( ['sh', '-c', 'npm install'], options);
+     * console.log(workerResult.output.toString());
+     * ```
+     * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
      * @param cli Command line to execute. First element is the executable. Then all next elements describe the parameters
      * @param options Describes command line options

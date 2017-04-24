@@ -107,7 +107,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/e9c083e/src/api/systemworker.d.ts#L4">systemworker.d.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L4">systemworker.d.ts:4</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -170,7 +170,7 @@ workerProxy.wait();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/e9c083e/src/api/systemworker.d.ts#L42">systemworker.d.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L42">systemworker.d.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -246,7 +246,7 @@ workerProxy.wait();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/e9c083e/src/api/systemworker.d.ts#L124">systemworker.d.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L124">systemworker.d.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -307,7 +307,7 @@ workerProxy.wait();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/e9c083e/src/api/systemworker.d.ts#L167">systemworker.d.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L179">systemworker.d.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -338,6 +338,16 @@ workerProxy.wait();
     <span class="hljs-attr">variables</span> : { <span class="hljs-attr">ENV_VAR_1</span> : <span class="hljs-string">'value1'</span> }
 };
 <span class="hljs-keyword">var</span> workerResult = SystemWorker.exec( [<span class="hljs-string">'sh'</span>, <span class="hljs-string">'-c'</span>, <span class="hljs-string">'ls -la {file_ref}'</span>], options);
+<span class="hljs-built_in">console</span>.log(workerResult.output.toString());
+</code></pre>
+								<h4 id="example-5-run-npm-install-in-a-simulated-terminal">Example 5: Run npm install in a simulated terminal</h4>
+								<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myFolder = <span class="hljs-keyword">new</span> Folder( <span class="hljs-string">'PROJECT'</span> );
+<span class="hljs-keyword">var</span> options = {
+    <span class="hljs-attr">parameters</span> : { <span class="hljs-attr">folder_ref</span> : myFolder },
+    <span class="hljs-attr">quote</span> : <span class="hljs-string">'"'</span>,
+    <span class="hljs-attr">pty</span> : <span class="hljs-literal">true</span>
+};
+<span class="hljs-keyword">var</span> workerResult = SystemWorker.exec( [<span class="hljs-string">'sh'</span>, <span class="hljs-string">'-c'</span>, <span class="hljs-string">'npm install'</span>], options);
 <span class="hljs-built_in">console</span>.log(workerResult.output.toString());
 </code></pre>
 								<dl class="tsd-comment-tags">

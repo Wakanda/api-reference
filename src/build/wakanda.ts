@@ -3858,10 +3858,14 @@ interface HttpServer {
      * // ./websocket-greetings.js
      * // Same as for ShareWorker
      * // Called every time a new websocket is connected
-     * onconnect = function ( msg ) {
+     * onconnect = function ( event ) {
      * 
      *     // Get the websocket port
-     *     var wsPort = msg.ports[0];
+     *     var wsPort = event.ports[0];
+     * 
+     *     // Get the websocket handshake data
+     *     var client = event.client;
+     *     // Is available: client.ip, client.port, client.urlPath, client.headers
      * 
      *     // Called every time a client sends a message    
      *     wsPort.onmessage = function( message ) {
@@ -5044,6 +5048,18 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
+     * #### Example 5: Run npm install in a simulated terminal
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     pty : true
+     * };
+     * var workerResult = SystemWorker.exec( ['sh', '-c', 'npm install'], options);
+     * console.log(workerResult.output.toString());
+     * ```
+     * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
      * @param cli Command line to execute. First element is the executable. Then all next elements describe the parameters
      * @param options Describes command line options
@@ -5077,6 +5093,10 @@ interface WAKSystemWorkerOptions {
      * (default: `false`) `true` to terminate the process tree started by the system worker once terminated, `false` otherwise.
      */
     kill_process_tree?: Boolean;
+    /**
+     * (default: `false`) `true` to simulate a terminal ouput mode when running system worker, `false` otherwise.
+     */
+    pty?: Boolean;
 }
 
 interface WAKSystemWorkerResult {

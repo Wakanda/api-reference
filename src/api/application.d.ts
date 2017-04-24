@@ -103,7 +103,7 @@ interface WAKCore {
      */
     console: WAKConsole;
     /**
-     * Defines a log listener. It calls `log()` function of JS module pass in parameter.
+     * Defines a log listener. It calls the `log()` function of `moduleId` JS module.
      * 
      * ```javascript
      * // from PROJECT/bootstrap.js
@@ -113,18 +113,28 @@ interface WAKCore {
      * var mail = require('waf-mail/mail');
      * 
      * exports.log = function(logArray) {
-     *     
+     *      
      *     logArray.forEach(function(logObject){
+     * 
+     *         // logObject.level returns the log type
+     *         // logObject.source returns in which file the log occurs
+     *         // logObject.message returns the log message
+     * 
      *         switch(logObject.level)
      *         {
+     *             case 3: // DEBUG log
+     *             case 4: // INFO log
+     *                 // Do nothing
+     *                 break;
      *             case 5: // WARNING log
      *             case 6: // ERROR log
+     *             case 7: // FATAL log
      *                 // If error or warning log, then send an alert email to admin
      *                 var message = new mail.Mail();
      *                 message.subject = 'Test';
      *                 message.from = 'application@myCompany.com';
      *                 message.to = ['admin@myCompany.com'];
-     *                 message.setBody("This is a test message");
+     *                 message.setBody( logObject.source +'/n/n'+ logObject.message );
      *                 mail.send({
      *                     address: 'smtp.gmail.com', 
      *                     port: 465,
@@ -143,7 +153,7 @@ interface WAKCore {
      * };
      * ```
      * 
-     * @warning Be aware `setLogListener` returns logs from `console.log()`.
+     * @warning Do not use `console` logger inside `setLogListener` as it will trigger logs too.
      * @param moduleId @param moduleId Describes the module id and path from `/modules/` directory
      */
     setLogListener(moduleId: String): void;

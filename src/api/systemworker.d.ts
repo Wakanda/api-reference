@@ -192,6 +192,10 @@ interface WAKSystemWorkerOptions {
      * (default: `false`) `true` to terminate the process tree started by the system worker once terminated, `false` otherwise.
      */
     kill_process_tree?: Boolean;
+    /**
+     * (default: `false`) `true` to simulate a terminal ouput mode when running system worker, `false` otherwise.
+     */
+    pty?: Boolean;
 }
 
 interface WAKSystemWorkerResult {

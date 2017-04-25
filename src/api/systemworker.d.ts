@@ -40,7 +40,7 @@ interface SystemWorker {
      * var options = {
      *     parameters : { folder_ref : myFolder },
      *     quote : '"',
-     *     pty : true
+     *     emulateTerminal : true
      * };
      * var workerProxy = new SystemWorker( 'cmd /c npm install', options);
      * ```
@@ -89,7 +89,7 @@ interface SystemWorker {
      * var options = {
      *     parameters : { folder_ref : myFolder },
      *     quote : '"',
-     *     pty : true
+     *     emulateTerminal : true
      * };
      * var workerProxy = new SystemWorker( ['cmd', '/c', 'npm install'], options);
      * ```
@@ -144,7 +144,7 @@ interface SystemWorker {
      * var options = {
      *     parameters : { folder_ref : myFolder },
      *     quote : '"',
-     *     pty : true
+     *     emulateTerminal : true
      * };
      * var workerResult = SystemWorker.exec( 'cmd /c npm install', options);
      * console.log(workerResult.output.toString());
@@ -199,7 +199,7 @@ interface SystemWorker {
      * var options = {
      *     parameters : { folder_ref : myFolder },
      *     quote : '"',
-     *     pty : true
+     *     emulateTerminal : true
      * };
      * var workerResult = SystemWorker.exec( ['cmd', '/c', 'npm install'], options);
      * console.log(workerResult.output.toString());
@@ -241,7 +241,7 @@ interface WAKSystemWorkerOptions {
     /**
      * (default: `false`) Windows only. `true` to simulate a windows terminal ouput when running system worker, `false` otherwise.
      */
-    pty?: Boolean;
+    emulateTerminal?: Boolean;
 }
 
 interface WAKSystemWorkerResult {

@@ -4923,6 +4923,17 @@ interface SystemWorker {
      * var workerProxy = new SystemWorker( 'sh -c ls -la {file_ref}', options);
      * ```
      * 
+     * #### Example 3: Run npm install in a simulated terminal (Windows only)
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     emulateTerminal : true
+     * };
+     * var workerProxy = new SystemWorker( 'cmd /c npm install', options);
+     * ```
+     * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
      * @param cli Command line to execute
      * @param options Describes command line options
@@ -4959,6 +4970,17 @@ interface SystemWorker {
      *     variables : { ENV_VAR_1 : 'value1' }
      * };
      * var workerProxy = new SystemWorker( ['sh', '-c', 'ls -la {file_ref}'], options);
+     * ```
+     * 
+     * #### Example 3: Run npm install in a simulated terminal (Windows only)
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     emulateTerminal : true
+     * };
+     * var workerProxy = new SystemWorker( ['cmd', '/c', 'npm install'], options);
      * ```
      * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
@@ -5005,6 +5027,18 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
+     * #### Example 5: Run npm install in a simulated terminal (Windows only)
+     * ```javascript
+     * var myFolder = new Folder( 'PROJECT' );
+     * var options = {
+     *     parameters : { folder_ref : myFolder },
+     *     quote : '"',
+     *     emulateTerminal : true
+     * };
+     * var workerResult = SystemWorker.exec( 'cmd /c npm install', options);
+     * console.log(workerResult.output.toString());
+     * ```
+     * 
      * @warning The system worker can only launch executable applications. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
      * @param cli Command line to execute
      * @param options Describes command line options
@@ -5048,15 +5082,15 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
-     * #### Example 5: Run npm install in a simulated terminal
+     * #### Example 5: Run npm install in a simulated terminal (Windows only)
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
      *     parameters : { folder_ref : myFolder },
      *     quote : '"',
-     *     pty : true
+     *     emulateTerminal : true
      * };
-     * var workerResult = SystemWorker.exec( ['sh', '-c', 'npm install'], options);
+     * var workerResult = SystemWorker.exec( ['cmd', '/c', 'npm install'], options);
      * console.log(workerResult.output.toString());
      * ```
      * 
@@ -5094,9 +5128,9 @@ interface WAKSystemWorkerOptions {
      */
     kill_process_tree?: Boolean;
     /**
-     * (default: `false`) `true` to simulate a terminal ouput mode when running system worker, `false` otherwise.
+     * (default: `false`) Windows only. `true` to simulate a windows terminal ouput when running system worker, `false` otherwise.
      */
-    pty?: Boolean;
+    emulateTerminal?: Boolean;
 }
 
 interface WAKSystemWorkerResult {

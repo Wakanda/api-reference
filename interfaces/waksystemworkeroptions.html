@@ -82,10 +82,10 @@
 						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#emulateterminal" class="tsd-kind-icon">emulate<wbr>Terminal</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#folder" class="tsd-kind-icon">folder</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#kill_process_tree" class="tsd-kind-icon">kill_<wbr>process_<wbr>tree</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#parameters" class="tsd-kind-icon">parameters</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#pty" class="tsd-kind-icon">pty</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#quote" class="tsd-kind-icon">quote</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#stdin" class="tsd-kind-icon">stdin</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="waksystemworkeroptions.html#variables" class="tsd-kind-icon">variables</a></li>
@@ -97,12 +97,27 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="emulateterminal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> emulate<wbr>Terminal</h3>
+					<div class="tsd-signature tsd-kind-icon">emulate<wbr>Terminal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L244">systemworker.d.ts:244</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>(default: <code>false</code>) Windows only. <code>true</code> to simulate a windows terminal ouput when running system worker, <code>false</code> otherwise.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="folder" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> folder</h3>
 					<div class="tsd-signature tsd-kind-icon">folder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span><span class="tsd-signature-symbol"> | </span><a href="wakfolderinstance.html" class="tsd-signature-type">WAKFolderInstance</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L186">systemworker.d.ts:186</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L220">systemworker.d.ts:220</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -117,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">kill_<wbr>process_<wbr>tree<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L206">systemworker.d.ts:206</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L240">systemworker.d.ts:240</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -132,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">parameters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L190">systemworker.d.ts:190</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L224">systemworker.d.ts:224</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -142,27 +157,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="pty" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> pty</h3>
-					<div class="tsd-signature tsd-kind-icon">pty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L210">systemworker.d.ts:210</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>(default: <code>false</code>) <code>true</code> to simulate a terminal ouput mode when running system worker, <code>false</code> otherwise.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="quote" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> quote</h3>
 					<div class="tsd-signature tsd-kind-icon">quote<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L194">systemworker.d.ts:194</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L228">systemworker.d.ts:228</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -177,7 +177,7 @@
 					<div class="tsd-signature tsd-kind-icon">stdin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">String</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L198">systemworker.d.ts:198</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L232">systemworker.d.ts:232</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +192,7 @@
 					<div class="tsd-signature tsd-kind-icon">variables<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/40173d5/src/api/systemworker.d.ts#L202">systemworker.d.ts:202</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/1a709a9/src/api/systemworker.d.ts#L236">systemworker.d.ts:236</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -219,6 +219,9 @@
 						<a href="waksystemworkeroptions.html" class="tsd-kind-icon">WAKSystem<wbr>Worker<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="waksystemworkeroptions.html#emulateterminal" class="tsd-kind-icon">emulate<wbr>Terminal</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="waksystemworkeroptions.html#folder" class="tsd-kind-icon">folder</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
@@ -226,9 +229,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="waksystemworkeroptions.html#parameters" class="tsd-kind-icon">parameters</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="waksystemworkeroptions.html#pty" class="tsd-kind-icon">pty</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="waksystemworkeroptions.html#quote" class="tsd-kind-icon">quote</a>

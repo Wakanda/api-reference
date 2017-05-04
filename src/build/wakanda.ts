@@ -3858,10 +3858,14 @@ interface HttpServer {
      * // ./websocket-greetings.js
      * // Same as for ShareWorker
      * // Called every time a new websocket is connected
-     * onconnect = function ( msg ) {
+     * onconnect = function ( event ) {
      * 
      *     // Get the websocket port
-     *     var wsPort = msg.ports[0];
+     *     var wsPort = event.ports[0];
+     * 
+     *     // Get the websocket handshake data
+     *     var client = event.client;
+     *     // Is available: client.ip, client.port, client.urlPath, client.headers
      * 
      *     // Called every time a client sends a message    
      *     wsPort.onmessage = function( message ) {
@@ -4344,12 +4348,12 @@ interface WAKMutexProxy {
      * 
      * ```javascript
      * var writeMutex = Mutex('writeMutex');
-     * writeMutex.tryLock();
+     * writeMutex.tryToLock();
      * ```
      * 
      * @returns Returns `true` if the mutex is locked, `false` otherwise
      */
-    tryLock(): Boolean;
+    tryToLock(): Boolean;
     /**
      * Unlock the mutex. The mutex must be lock in the same thread to be unlock.
      * 

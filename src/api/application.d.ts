@@ -105,6 +105,9 @@ interface WAKCore {
     /**
      * Defines a log listener. It calls the `log()` function of `moduleId` JS module.
      * 
+     * @warning This is an enterprise feature
+     * @warning Do not use `console` logger inside `setLogListener` as it will trigger cyclic logs.
+     * 
      * ```javascript
      * // from PROJECT/bootstrap.js
      * setLogListener('log-listener');
@@ -153,7 +156,6 @@ interface WAKCore {
      * };
      * ```
      * 
-     * @warning Do not use `console` logger inside `setLogListener` as it will trigger logs too.
      * @param moduleId @param moduleId Describes the module id and path from `/modules/` directory
      */
     setLogListener(moduleId: String): void;

@@ -106,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">Buffer<span class="tsd-signature-symbol">:</span> <a href="wakbufferinstance.html" class="tsd-signature-type">WAKBufferInstance</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L163">application.d.ts:163</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L165">application.d.ts:165</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -121,7 +121,7 @@
 					<div class="tsd-signature tsd-kind-icon">console<span class="tsd-signature-symbol">:</span> <a href="wakconsole.html" class="tsd-signature-type">WAKConsole</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L104">application.d.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L104">application.d.ts:104</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -143,7 +143,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L187">application.d.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L189">application.d.ts:189</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -198,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L174">application.d.ts:174</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L176">application.d.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -224,7 +224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L178">application.d.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L180">application.d.ts:180</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,14 +252,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/731eddd/src/api/application.d.ts#L159">application.d.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L161">application.d.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Defines a log listener. It calls the <code>log()</code> function of <code>moduleId</code> JS module.</p>
 								</div>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// from PROJECT/bootstrap.js</span>
+								<dl class="tsd-comment-tags">
+									<dt>warning</dt>
+									<dd><p>This is an enterprise feature</p>
+									</dd>
+									<dt>warning</dt>
+									<dd><p>Do not use <code>console</code> logger inside <code>setLogListener</code> as it will trigger cyclic logs.</p>
+										<pre><code class="lang-javascript"><span class="hljs-comment">// from PROJECT/bootstrap.js</span>
 setLogListener(<span class="hljs-string">'log-listener'</span>);
 
 <span class="hljs-comment">// from PROJECT/modules/log-listener/index.js</span>
@@ -305,9 +311,6 @@ exports.log = <span class="hljs-function"><span class="hljs-keyword">function</s
     });
 };
 </code></pre>
-								<dl class="tsd-comment-tags">
-									<dt>warning</dt>
-									<dd><p>Do not use <code>console</code> logger inside <code>setLogListener</code> as it will trigger logs too.</p>
 									</dd>
 								</dl>
 							</div>

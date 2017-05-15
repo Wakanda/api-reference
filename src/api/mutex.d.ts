@@ -31,12 +31,12 @@ interface WAKMutexProxy {
      * 
      * ```javascript
      * var writeMutex = Mutex('writeMutex');
-     * writeMutex.tryLock();
+     * writeMutex.tryToLock();
      * ```
      * 
      * @returns Returns `true` if the mutex is locked, `false` otherwise
      */
-    tryLock(): Boolean;
+    tryToLock(): Boolean;
     /**
      * Unlock the mutex. The mutex must be lock in the same thread to be unlock.
      * 

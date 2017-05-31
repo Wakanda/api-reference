@@ -5128,7 +5128,8 @@ interface WAKSystemWorkerOptions {
      */
     kill_process_tree?: Boolean;
     /**
-     * (default: `false`) Windows only. `true` to simulate a windows terminal ouput when running system worker, `false` otherwise.
+     * (default: `false`) `true` to simulate a terminal ouput for running the current system worker, `false` otherwise.
+     * @warning `stdout` and `stderr` are mixed in the same output
      */
     emulateTerminal?: Boolean;
 }

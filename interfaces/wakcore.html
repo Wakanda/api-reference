@@ -92,6 +92,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="wakcore.html#progressindicator" class="tsd-kind-icon">Progress<wbr>Indicator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="wakcore.html#generateuuid" class="tsd-kind-icon">generateUUID</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="wakcore.html#getprogressindicator" class="tsd-kind-icon">get<wbr>Progress<wbr>Indicator</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="wakcore.html#setloglistener" class="tsd-kind-icon">set<wbr>Log<wbr>Listener</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">Buffer<span class="tsd-signature-symbol">:</span> <a href="wakbufferinstance.html" class="tsd-signature-type">WAKBufferInstance</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/application.d.ts#L108">application.d.ts:108</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L165">application.d.ts:165</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -120,7 +121,7 @@
 					<div class="tsd-signature tsd-kind-icon">console<span class="tsd-signature-symbol">:</span> <a href="wakconsole.html" class="tsd-signature-type">WAKConsole</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/application.d.ts#L104">application.d.ts:104</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L104">application.d.ts:104</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -142,7 +143,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/application.d.ts#L132">application.d.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L189">application.d.ts:189</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -197,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/application.d.ts#L119">application.d.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L176">application.d.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -223,7 +224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/application.d.ts#L123">application.d.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L180">application.d.ts:180</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -238,6 +239,91 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="progressindicator.html" class="tsd-signature-type">ProgressIndicator</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="setloglistener" class="tsd-anchor"></a>
+					<h3>set<wbr>Log<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Log<wbr>Listener<span class="tsd-signature-symbol">(</span>moduleId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">String</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/3aa7ce0/src/api/application.d.ts#L161">application.d.ts:161</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Defines a log listener. It calls the <code>log()</code> function of <code>moduleId</code> JS module.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>warning</dt>
+									<dd><p>This is an enterprise feature</p>
+									</dd>
+									<dt>warning</dt>
+									<dd><p>Do not use <code>console</code> logger inside <code>setLogListener</code> as it will trigger cyclic logs.</p>
+										<pre><code class="lang-javascript"><span class="hljs-comment">// from PROJECT/bootstrap.js</span>
+setLogListener(<span class="hljs-string">'log-listener'</span>);
+
+<span class="hljs-comment">// from PROJECT/modules/log-listener/index.js</span>
+<span class="hljs-keyword">var</span> mail = <span class="hljs-built_in">require</span>(<span class="hljs-string">'waf-mail/mail'</span>);
+
+exports.log = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">logArray</span>) </span>{
+
+    logArray.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">logObject</span>)</span>{
+
+        <span class="hljs-comment">// logObject.level returns the log type</span>
+        <span class="hljs-comment">// logObject.source returns in which file the log occurs</span>
+        <span class="hljs-comment">// logObject.message returns the log message</span>
+
+        <span class="hljs-keyword">switch</span>(logObject.level)
+        {
+            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-comment">// DEBUG log</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: <span class="hljs-comment">// INFO log</span>
+                <span class="hljs-comment">// Do nothing</span>
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>: <span class="hljs-comment">// WARNING log</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>: <span class="hljs-comment">// ERROR log</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>: <span class="hljs-comment">// FATAL log</span>
+                <span class="hljs-comment">// If error or warning log, then send an alert email to admin</span>
+                <span class="hljs-keyword">var</span> message = <span class="hljs-keyword">new</span> mail.Mail();
+                message.subject = <span class="hljs-string">'Test'</span>;
+                message.from = <span class="hljs-string">'application@myCompany.com'</span>;
+                message.to = [<span class="hljs-string">'admin@myCompany.com'</span>];
+                message.setBody( logObject.source +<span class="hljs-string">'/n/n'</span>+ logObject.message );
+                mail.send({
+                    <span class="hljs-attr">address</span>: <span class="hljs-string">'smtp.gmail.com'</span>,
+                    <span class="hljs-attr">port</span>: <span class="hljs-number">465</span>,
+                    <span class="hljs-attr">isSSL</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-attr">username</span>: <span class="hljs-string">'admin@myCompany.com'</span>,
+                    <span class="hljs-attr">password</span>: <span class="hljs-string">'my-admin-password'</span>,
+                    <span class="hljs-attr">domain</span>: <span class="hljs-string">'gmail.com'</span>
+                }, message);
+
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-comment">// Do nothing</span>
+                <span class="hljs-keyword">break</span>;
+        }
+    });
+};
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>moduleId: <span class="tsd-signature-type">String</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>@param moduleId Describes the module id and path from <code>/modules/</code> directory</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -272,6 +358,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
 								<a href="wakcore.html#getprogressindicator" class="tsd-kind-icon">get<wbr>Progress<wbr>Indicator</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="wakcore.html#setloglistener" class="tsd-kind-icon">set<wbr>Log<wbr>Listener</a>
 							</li>
 						</ul>
 					</li>

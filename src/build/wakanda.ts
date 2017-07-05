@@ -200,6 +200,63 @@ interface WAKCore {
      */
     console: WAKConsole;
     /**
+     * Defines a log listener. It calls the `log()` function of `moduleId` JS module.
+     * 
+     * @warning This is an enterprise feature
+     * @warning Do not use `console` logger inside `setLogListener` as it will trigger cyclic logs.
+     * 
+     * ```javascript
+     * // from PROJECT/bootstrap.js
+     * setLogListener('log-listener');
+     *    
+     * // from PROJECT/modules/log-listener/index.js
+     * var mail = require('waf-mail/mail');
+     * 
+     * exports.log = function(logArray) {
+     *      
+     *     logArray.forEach(function(logObject){
+     * 
+     *         // logObject.level returns the log type
+     *         // logObject.source returns in which file the log occurs
+     *         // logObject.message returns the log message
+     * 
+     *         switch(logObject.level)
+     *         {
+     *             case 3: // DEBUG log
+     *             case 4: // INFO log
+     *                 // Do nothing
+     *                 break;
+     *             case 5: // WARNING log
+     *             case 6: // ERROR log
+     *             case 7: // FATAL log
+     *                 // If error or warning log, then send an alert email to admin
+     *                 var message = new mail.Mail();
+     *                 message.subject = 'Test';
+     *                 message.from = 'application@myCompany.com';
+     *                 message.to = ['admin@myCompany.com'];
+     *                 message.setBody( logObject.source +'/n/n'+ logObject.message );
+     *                 mail.send({
+     *                     address: 'smtp.gmail.com', 
+     *                     port: 465,
+     *                     isSSL: true,
+     *                     username: 'admin@myCompany.com', 
+     *                     password: 'my-admin-password', 
+     *                     domain: 'gmail.com'
+     *                 }, message);                
+     *                 
+     *                 break;
+     *             default:
+     *                 // Do nothing
+     *                 break;
+     *         }
+     *     });
+     * };
+     * ```
+     * 
+     * @param moduleId @param moduleId Describes the module id and path from `/modules/` directory
+     */
+    setLogListener(moduleId: String): void;
+    /**
      * References the buffer constructor.
      */
     Buffer: WAKBufferInstance;

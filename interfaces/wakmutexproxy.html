@@ -83,7 +83,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#lock" class="tsd-kind-icon">lock</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#trytolock" class="tsd-kind-icon">try<wbr>ToLock</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#trylock" class="tsd-kind-icon">try<wbr>Lock</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#unlock" class="tsd-kind-icon">unlock</a></li>
 							</ul>
 						</section>
@@ -102,7 +102,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/541e81c/src/api/mutex.d.ts#L28">mutex.d.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/mutex.d.ts#L28">mutex.d.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -119,16 +119,16 @@ writeMutex.lock();
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="trytolock" class="tsd-anchor"></a>
-					<h3>try<wbr>ToLock</h3>
+					<a name="trylock" class="tsd-anchor"></a>
+					<h3>try<wbr>Lock</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">try<wbr>ToLock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">try<wbr>Lock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/541e81c/src/api/mutex.d.ts#L39">mutex.d.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/mutex.d.ts#L39">mutex.d.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -136,7 +136,7 @@ writeMutex.lock();
 									<p>Tries to lock the mutex or returns false if it is already locked. The thread execution is not paused.</p>
 								</div>
 								<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> writeMutex = Mutex(<span class="hljs-string">'writeMutex'</span>);
-writeMutex.tryToLock();
+writeMutex.tryLock();
 </code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
@@ -154,7 +154,7 @@ writeMutex.tryToLock();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/541e81c/src/api/mutex.d.ts#L51">mutex.d.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/c116bbd/src/api/mutex.d.ts#L51">mutex.d.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -192,7 +192,7 @@ writeMutex.unlock();
 								<a href="wakmutexproxy.html#lock" class="tsd-kind-icon">lock</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="wakmutexproxy.html#trytolock" class="tsd-kind-icon">try<wbr>ToLock</a>
+								<a href="wakmutexproxy.html#trylock" class="tsd-kind-icon">try<wbr>Lock</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="wakmutexproxy.html#unlock" class="tsd-kind-icon">unlock</a>

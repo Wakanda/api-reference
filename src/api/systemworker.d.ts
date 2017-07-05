@@ -34,7 +34,7 @@ interface SystemWorker {
      * var workerProxy = new SystemWorker( 'sh -c ls -la {file_ref}', options);
      * ```
      * 
-     * #### Example 3: Run npm install in a simulated terminal (Windows only)
+     * #### Example 3: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -83,7 +83,7 @@ interface SystemWorker {
      * var workerProxy = new SystemWorker( ['sh', '-c', 'ls -la {file_ref}'], options);
      * ```
      * 
-     * #### Example 3: Run npm install in a simulated terminal (Windows only)
+     * #### Example 3: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -138,7 +138,7 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
-     * #### Example 5: Run npm install in a simulated terminal (Windows only)
+     * #### Example 5: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -193,7 +193,7 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
-     * #### Example 5: Run npm install in a simulated terminal (Windows only)
+     * #### Example 5: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -239,7 +239,7 @@ interface WAKSystemWorkerOptions {
      */
     kill_process_tree?: Boolean;
     /**
-     * (default: `false`) `true` to simulate a terminal ouput for running the current system worker, `false` otherwise.
+     * (default: `false`) `true` to emulate a terminal ouput for running the current system worker, `false` otherwise.
      * @warning `stdout` and `stderr` are mixed in the same output
      */
     emulateTerminal?: Boolean;

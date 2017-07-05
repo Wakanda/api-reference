@@ -3797,7 +3797,7 @@ interface HttpServer {
     readonly started: Boolean;
     /**
      * Adds a request handler function on the server.
-     * It is recommended to write all request handler in the `bootstrap.js` file in order to be available at server start up.
+     * It is recommended to declare all request handler in the `bootstrap.js` file in order to be available at server start up.
      * 
      * #### Step 1: Add a request handler
      * ```javascript
@@ -3820,32 +3820,8 @@ interface HttpServer {
      */
     addRequestHandler(pattern: String, modulePath: String, functionName: String): void;
     /**
-     * Adds a request handler function on the server.
-     * It is recommended to write all request handler in the `bootstrap.js` file in order to be available at server start up.
-     * 
-     * #### Step 1: Add a request handler
-     * ```javascript
-     * // It is recommended to write these lines in bootstrap.js
-     * // On every "/ping" requests, call "pong()" function in "request-greetings.js"
-     * httpServer.addRequestHandler('^/ping$', 'request-greetings.js', 'pong');
-     * ```
-     * 
-     * #### Step 2: Handle the request
-     * ```javascript
-     * // request-greetings.js
-     * function pong( request, response ){
-     *     return 'pong';
-     * }
-     * ```
-     * 
-     * @param pattern Regexp pattern to intercept a HTTP request
-     * @param filePath Path to the file that defines the functionName
-     * @param functionName Function name which handles the request and returns the request response
-     */
-    addRequestHandler(pattern: String, filePath: String, functionName: String): void;
-    /**
      * Adds a WebSocket handler script on the server.
-     * It is recommended to write all websocket handler in the `bootstrap.js` file in order to be available at server start up.
+     * It is recommended to declare all websocket handler in the `bootstrap.js` file in order to be available at server start up.
      * 
      * #### Step 1: Add a websocket handler
      * ```javascript
@@ -3912,20 +3888,6 @@ interface HttpServer {
      * @param functionName Function name which handles the request
      */
     removeRequestHandler(pattern: String, modulePath: String, functionName: String): void;
-    /**
-     * Removes an existing request handler function on the server.
-     * 
-     * ```javascript
-     * // Must match parameters of "addRequestHandler()"
-     * // httpServer.addRequestHandler('^/ping$', 'request-greetings.js', 'pong');
-     * httpServer.removeRequestHandler('^/ping$', 'request-greetings.js', 'pong');
-     * ```
-     * 
-     * @param pattern Regexp pattern to intercept a HTTP request
-     * @param filePath Path to the file that defines the functionName
-     * @param functionName Function name which handles the request
-     */
-    removeRequestHandler(pattern: String, filePath: String, functionName: String): void;
     /**
      * Removes an existing websocket handler on the server.
      * 

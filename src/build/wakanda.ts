@@ -474,10 +474,33 @@ interface WAKStorage {
      */
     sessionStorage: LockableKeyValueStorage;
     /**
-     * References the application storage.
+     * Get or create a storage.
+     * This storage is shared between all your application.
+     * 
+     * ```
+     * // First call create the storage
+     * var myStorage = getStorage( 'mySuperHeroes' );
+     * myStorage.list = ['Batman', 'Spiderman', 'Superman'];
+     * 
+     * // Second cal retrieve the storage even in another JS contexts.
+     * var myStorage = getStorage( 'mySuperHeroes' );
+     * // myStorage.list returns ['Batman', 'Spiderman', 'Superman']
+     * 
+     * // The storage object can be manipulate as a JS object.
+     * myStorage = { a:1,b:2,c:[1,2,3],d:{a:1} };
+     * myStorage.a++;
+     * myStorage.d.a++;
+     * ```
      */
-    storage: LockableKeyValueStorage;
-
+    getStorage(storageId: String): LockableKeyValueStorage;
+    /**
+     * Remove a given storage.
+     * 
+     * ```
+     * removeStorage( 'myCustomStorage' );
+     * ```
+     */
+    removeStorage(storageId: String): void;
 }
 
 
@@ -4224,42 +4247,6 @@ interface Image {
      * @param mode (default: 6) Scale mode to apply. See [doc center](http://doc.wakanda.org/home2.en.html#/Images/Image-Instances/thumbnail.301-663098.en.html) for more details.
      */
     thumbnail(width: Number, height: Number, mode?: Number): Image;
-}interface LockableKeyValueStorage extends KeyValueStorage {
-    /**
-     * Locks the storage object. Only the current thread can read or modify the storage object.
-     */
-    lock(): void;
-    /**
-     * Tries to lock the storage object. Returns `true` in case of success and false otherwise.
-     */
-    tryLock(): Boolean;
-    /**
-     * Removes a lock that was previously put on the storage object.
-     */
-    unlock(): void;
-}
-
-interface KeyValueStorage {
-    /**
-     * Gets the number of key/value pairs currently present in the storage object.
-     */
-    length: Number;
-    /**
-     * Removes all key/value pairs from the storage object.
-     */
-    clear(): void;
-    /**
-     * Gets a copy of the value from the storage object.
-     */
-    getItem(key: String): any;
-    /**
-     * Removes an item from the storage object.
-     */
-    removeItem(key: String): void;
-    /**
-     * Create or update an item in the storage object.
-     */
-    setItem(key: String, value: String | Number | Object): void;
 }
 
 
@@ -4906,7 +4893,43 @@ interface WAKSharedWorkerProxy {
 		*writes data to the SocketSync to which it is applied
 		*/
 		write(data: WAKBufferInstance, encoding: String) : Boolean;
-	}
+	}interface LockableKeyValueStorage extends KeyValueStorage {
+    /**
+     * Locks the storage object. Only the current thread can read or modify the storage object.
+     */
+    lock(): void;
+    /**
+     * Tries to lock the storage object. Returns `true` in case of success and false otherwise.
+     */
+    tryLock(): Boolean;
+    /**
+     * Removes a lock that was previously put on the storage object.
+     */
+    unlock(): void;
+}
+
+interface KeyValueStorage {
+    /**
+     * Gets the number of key/value pairs currently present in the storage object.
+     */
+    length: Number;
+    /**
+     * Removes all key/value pairs from the storage object.
+     */
+    clear(): void;
+    /**
+     * Gets a copy of the value from the storage object.
+     */
+    getItem(key: String): any;
+    /**
+     * Removes an item from the storage object.
+     */
+    removeItem(key: String): void;
+    /**
+     * Create or update an item in the storage object.
+     */
+    setItem(key: String, value: String | Number | Object): void;
+}
 
 
 interface SystemWorker {
@@ -4942,7 +4965,7 @@ interface SystemWorker {
      * var workerProxy = new SystemWorker( 'sh -c ls -la {file_ref}', options);
      * ```
      * 
-     * #### Example 3: Run npm install in a simulated terminal (Windows only)
+     * #### Example 3: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -4991,7 +5014,7 @@ interface SystemWorker {
      * var workerProxy = new SystemWorker( ['sh', '-c', 'ls -la {file_ref}'], options);
      * ```
      * 
-     * #### Example 3: Run npm install in a simulated terminal (Windows only)
+     * #### Example 3: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -5046,7 +5069,7 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
-     * #### Example 5: Run npm install in a simulated terminal (Windows only)
+     * #### Example 5: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -5101,7 +5124,7 @@ interface SystemWorker {
      * console.log(workerResult.output.toString());
      * ```
      * 
-     * #### Example 5: Run npm install in a simulated terminal (Windows only)
+     * #### Example 5: Run npm install in an emulated terminal
      * ```javascript
      * var myFolder = new Folder( 'PROJECT' );
      * var options = {
@@ -5147,7 +5170,7 @@ interface WAKSystemWorkerOptions {
      */
     kill_process_tree?: Boolean;
     /**
-     * (default: `false`) `true` to simulate a terminal ouput for running the current system worker, `false` otherwise.
+     * (default: `false`) `true` to emulate a terminal ouput for running the current system worker, `false` otherwise.
      * @warning `stdout` and `stderr` are mixed in the same output
      */
     emulateTerminal?: Boolean;

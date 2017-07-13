@@ -1,4 +1,4 @@
-///<reference path="./keyvaluestorage.d.ts" />
+///<reference path="./storage.d.ts" />
 
 interface WAKConnectionSessionInfo {
     /**

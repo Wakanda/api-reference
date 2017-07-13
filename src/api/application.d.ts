@@ -11,7 +11,6 @@
 /// <reference path="./group.d.ts" />
 /// <reference path="./httpServer.d.ts" />
 /// <reference path="./image.d.ts" />
-/// <reference path="./keyvaluestorage.d.ts" />
 /// <reference path="./module.d.ts" />
 /// <reference path="./mutex.d.ts" />
 /// <reference path="./nodeworker.d.ts" />
@@ -20,6 +19,7 @@
 /// <reference path="./sharedworker.d.ts" />
 /// <reference path="./socket.d.ts" />
 /// <reference path="./socketsync.d.ts" />
+/// <reference path="./storage.d.ts" />
 /// <reference path="./systemworker.d.ts" />
 /// <reference path="./textstream.d.ts" />
 /// <reference path="./user.d.ts" />
@@ -377,8 +377,31 @@ interface WAKStorage {
      */
     sessionStorage: LockableKeyValueStorage;
     /**
-     * References the application storage.
+     * Get or create a storage.
+     * This storage is shared between all your application.
+     * 
+     * ```
+     * // First call creates the storage
+     * var myStorage = getStorage( 'mySuperHeroes' );
+     * myStorage.squadOne = ['Batman', 'Spiderman', 'Superman'];
+     * 
+     * // Second call retrieves the storage even in another JS contexts.
+     * var myStorage = getStorage( 'mySuperHeroes' );
+     * // myStorage.squadOne returns ['Batman', 'Spiderman', 'Superman']
+     * 
+     * // The storage object can be manipulate as a JS object.
+     * myStorage = { a:1,b:2,c:[1,2,3],d:{a:1} };
+     * myStorage.a++;
+     * myStorage.d.a++;
+     * ```
      */
-    storage: LockableKeyValueStorage;
-
+    getStorage(storageId: String): LockableKeyValueStorage;
+    /**
+     * Remove a given storage.
+     * 
+     * ```
+     * removeStorage( 'myCustomStorage' );
+     * ```
+     */
+    removeStorage(storageId: String): void;
 }

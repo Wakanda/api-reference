@@ -244,7 +244,7 @@ interface WAKSystemWorkerOptions {
      */
     emulateTerminal?: Boolean;
     /**
-     * (default: `true`) `true` to return all escape sequences in the output when `emulatingTerminal` options is true, `false` otherwise.
+     * (default: `true`) `true` to return all ANSI escape sequences in the output when `emulatingTerminal` options is true, `false` otherwise.
      */
     escapeSequences?: Boolean;
 }

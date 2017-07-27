@@ -243,6 +243,10 @@ interface WAKSystemWorkerOptions {
      * @warning `stdout` and `stderr` are mixed in the same output
      */
     emulateTerminal?: Boolean;
+    /**
+     * (default: `true`) `true` to return all escape sequences in the output when `emulatingTerminal` options is true, `false` otherwise.
+     */
+    escapeSequences?: Boolean;
 }
 
 interface WAKSystemWorkerResult {

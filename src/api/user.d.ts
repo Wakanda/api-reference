@@ -1,5 +1,5 @@
 ///<reference path="./group.d.ts" />
-///<reference path="./keyvaluestorage.d.ts" />
+///<reference path="./storage.d.ts" />
 
 interface User {
     /**

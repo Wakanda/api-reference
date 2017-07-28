@@ -478,13 +478,13 @@ interface WAKStorage {
      * This storage is shared between all your application.
      * 
      * ```
-     * // First call create the storage
+     * // First call creates the storage
      * var myStorage = getStorage( 'mySuperHeroes' );
-     * myStorage.list = ['Batman', 'Spiderman', 'Superman'];
+     * myStorage.squadOne = ['Batman', 'Spiderman', 'Superman'];
      * 
-     * // Second cal retrieve the storage even in another JS contexts.
+     * // Second call retrieves the storage even in another JS contexts.
      * var myStorage = getStorage( 'mySuperHeroes' );
-     * // myStorage.list returns ['Batman', 'Spiderman', 'Superman']
+     * // myStorage.squadOne returns ['Batman', 'Spiderman', 'Superman']
      * 
      * // The storage object can be manipulate as a JS object.
      * myStorage = { a:1,b:2,c:[1,2,3],d:{a:1} };
@@ -5174,6 +5174,10 @@ interface WAKSystemWorkerOptions {
      * @warning `stdout` and `stderr` are mixed in the same output
      */
     emulateTerminal?: Boolean;
+    /**
+     * (default: `true`) `true` to return all ANSI escape sequences in the output when `emulatingTerminal` options is true, `false` otherwise.
+     */
+    escapeSequences?: Boolean;
 }
 
 interface WAKSystemWorkerResult {

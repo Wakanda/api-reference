@@ -147,25 +147,46 @@ interface EntityCollection {
 	*/
 	count(attribute: DatastoreClassAttribute, distinct?: Boolean) : Number;
 	
+	/**
+	* The `distinctPaths()` method returns an array of all distinct paths available in the parameter `object` attribute.
+	* @param objectAttribute DatastoreClassAttribute	Indexed `Object` attribute for which you want to get the list of distinct paths
+	* @returns An array with a list of all distinct paths available in the parameter `object` attribute
+	* @warning The object attribute as parameter must be indexed
+	* 
+	* #### Example: Get a list of all distinct paths available 
+	* ```javascript
+	* var allProducts = ds.Products.all();
+	* var allPaths = allProducts.distinctPaths("type"); //job is a DatastoreClassAttribute of Employee
+	* // Returns [
+		"phone",
+		"phone.smartphone",
+		"pen",
+		"computer",
+		"computer.desktop",
+		"computer.laptop"
+	]
+	* ``` 
+	*/
+	distinctPaths(objectAttribute: DatastoreClassAttribute): any[];
 	
 	/**
-	* The distinctValues( ) method creates an array and returns in it all the distinct values stored in attribute for the entity collection or datastore class
+	* The `distinctValues()` method creates an array and returns in it all the distinct values stored in attribute for the entity collection or datastore class
 	* @param attribute DatastoreClassAttribute 		Attribute for which you want to get the list of distinct values
-	* @returns  Array containing the list of distinct values
+	* @returns Array containing the list of distinct values
 	* #### Example 1
 	* ```javascript
 	* //In our example, we want to return the total number of different jobs in the same company:
     *
-	* var employer = ds.Company.find( "name == :1", "WAKANDA" ) ;  // find the company by its name
+	* var employer = ds.Company.find( "name == :1", "WAKANDA" );  // find the company by its name
 	* var allEmp = ds.Employee.query("comp == :1", employer); // create an entity collection containing all the employees in a company
 	* // 'comp' is a relation attribute in Employee
-	*  var jobNb = allEmp.distinctValues("jobName").length; //`jobName` is a DatastoreClassAttribute of Employee
+	* var jobNb = allEmp.distinctValues("jobName").length; //`jobName` is a DatastoreClassAttribute of Employee
     * ``` 
 	* #### Example 2 - distinctValues with Object Attributes.
 	* ```javascript
 	* // In a "keywords" object attribute of an Article datastore class, you store the page numbers for each keyword in a "pages" array. 
 	* // You want to know all pages that contain at least one keyword
-	*  var arr = ds.Article.all().distinctValues("keywords.pages[]");
+	* var arr = ds.Article.all().distinctValues("keywords.pages[]");
 	* ``` 
 	*/
 	distinctValues(attribute: DatastoreClassAttribute): any[];

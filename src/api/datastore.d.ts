@@ -1,6 +1,5 @@
 ///<reference path="./datastoreclassenumerator.d.ts" />
 
-/** FRED TEST */
 interface Datastore {
     
 	/**

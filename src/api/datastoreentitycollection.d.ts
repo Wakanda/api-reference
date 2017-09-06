@@ -150,7 +150,7 @@ interface EntityCollection {
 	/**
 	* The `distinctPaths()` method returns an array of all distinct paths available in the parameter `object` attribute.
 	* @param objectAttribute DatastoreClassAttribute	Indexed `Object` attribute for which you want to get the list of distinct paths
-	* @returns An array with a list of all distinct paths available in the parameter `object` attribute
+	* @returns An sorted array with a list of all distinct paths available in the parameter `object` attribute
 	* @warning The object attribute as parameter must be indexed
 	* 
 	* #### Example: Get a list of all distinct paths available 
@@ -158,12 +158,12 @@ interface EntityCollection {
 	* var allProducts = ds.Products.all();
 	* var allPaths = allProducts.distinctPaths("type"); //job is a DatastoreClassAttribute of Employee
 	* // Returns [
-		"phone",
-		"phone.smartphone",
-		"pen",
 		"computer",
 		"computer.desktop",
-		"computer.laptop"
+		"computer.laptop",
+		"pen",
+		"phone",
+		"phone.smartphone"
 	]
 	* ``` 
 	*/

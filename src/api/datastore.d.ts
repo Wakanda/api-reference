@@ -1,7 +1,10 @@
 ///<reference path="./datastoreclassenumerator.d.ts" />
 
 interface Datastore {
-    
+	/**
+	* Accepts the transaction opened by the `ds.startTransaction()` method at the corresponding level in the current context
+	*/
+	commit() : void;
 	/**
 	*Collection of available datastore classes
 	*/
@@ -47,11 +50,44 @@ interface Datastore {
 	*/
 	importFromJSON(importFolder: WAKFolderInstance) : void;
 	/**
+	* Pause a transaction opened by the `ds.startTransaction()` method in the current context
+	*/
+	pauseTransaction() : void;
+	/**
+	* Resume a transaction paused by the `ds.pauseTransaction()` method in the current context
+	*/
+	resumeTransaction() : void;
+	/**
 	*looks for any "ghost" tables in the data file of your application and adds the corresponding datastore classes to the loaded model
 	*/
 	revealGhostTables() : void;
 	/**
+	* Cancels the transaction opened by the `ds.startTransaction()` method at the corresponding level in the current context
+	*/
+	rollback() : void;
+	/**
 	*increase dynamically the datastore cache size
 	*/
 	setCacheSize(newSize: Number) : void;
+	/**
+	* Starts a transaction in the current context
+	*
+	* #### Example
+	*```javascript
+	* model.Invoice.events.remove = function(){
+    * 	if (this.invoiceItems.length != 0){
+    * 		ds.startTransaction();			//start a transaction
+    * 		this.invoiceItems.remove();		//attempt to delete the invoiceItems
+    * 		// if all went well, the commit will be done automatically
+    * 		// if there is an error, the transaction will rollback
+    * 	}
+	* }
+	*```
+	*/
+	startTransaction() : void;
+	/**
+	* Returns the level of the current transaction for the context
+	* @return Number Level of the current transaction (0 if no transaction was started)
+	*/
+	transactionLevel() : Number;
 }

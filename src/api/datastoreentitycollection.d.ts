@@ -603,7 +603,26 @@ interface EntityCollection {
 	sum(attribute: DatastoreClassAttribute, distinct?: Boolean) : Number;
 
 
-
+	/**
+	* The `slice()` method returns a shallow copy of a portion of a collection into a new collection object selected from begin to end (end not included). The original collection will not be modified.
+	* @param begin Zero-based index at which to begin extraction
+	* @param end Zero-based index before which to end extraction. `slice` extracts up to but not including end.
+	* @return `slice` does not alter the original collection. It returns a shallow copy of elements from the original collection.
+	*
+	* #### Examples
+	* ```javascript
+	* var originalCollection = ds.Employees.query("ID < 100").orderBy("salary desc");
+	* // Get a copy of the collection
+	* var copyCatColl = originalCollection.splice();
+	* // Get the first 10 and give them a good raise
+	* var firstTenColl = originalCollection.splice(0,10);
+	* // Get the last 10
+	* var lastTenColl = originalCollection.splice(-10); 
+	* // Exclude first and last 10 and give them a decent raise
+	* var middleGuysColl = originalCollection.splice(10, -10);
+	* ```
+	*/
+	splice(begin?: Number, end?: Number) : Number;	
 
 
 	/**

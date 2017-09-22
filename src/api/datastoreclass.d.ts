@@ -558,8 +558,27 @@ interface DatastoreClass {
 	setAutoSequenceNumber(counter: Number) : void;
 	
 	
-	
-	
+	/**
+	* `setCollectionPageLength` sets the default dataclass page size returned by each query. This setting is only applied to the current dataclass.
+	* @warning This method can only be used on Wakanda/4D remote datastore dataclasses.
+	* @param pageSize Number of entities return by each query
+	*
+	* #### Example
+	* ```javascript
+	* myRemoteDatastore.Employees.setCollectionPageLength(80);
+	* ```
+	*/
+	setCollectionPageLength(pageSize: Number) : void;
+	/**
+	* `getCollectionPageLength` returns the default page size of a dataclass.
+	* @returns Dataclass page size.
+	* 
+	* #### Example
+	* ```javascript
+	* myRemoteDatastore.Employees.getCollectionPageLength();
+	* ```
+	*/
+	getCollectionPageLength() : Number;
 	
 	
 	

@@ -1,6 +1,7 @@
 interface LockableKeyValueStorage extends KeyValueStorage {
     /**
-     * Locks the storage object or waiting until it can be lock. Only the current thread can read or modify the storage object.
+     * Locks the storage object or waits until it can be locked. When a thread calls this method,
+     * it becomes the only thread able to read or modify the storage object until it unlocks it.
      * This is a blocking method. See `tryLock()` method for a non blocking method.
      */
     lock(): void;

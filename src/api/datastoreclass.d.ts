@@ -559,8 +559,8 @@ interface DatastoreClass {
 	
 	
 	/**
-	* `setCollectionPageLength` sets the default dataclass page size returned by each query. This settings is only apply to the selected dataclass.
-	* @warning This method is working only on Wakanda/4D remote datastore.
+	* `setCollectionPageLength` sets the default dataclass page size returned by each query. This setting is only applied to the current dataclass.
+	* @warning This method can only be used on Wakanda/4D remote datastore dataclasses.
 	* @param pageSize Number of entities return by each query
 	*
 	* #### Example

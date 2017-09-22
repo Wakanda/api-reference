@@ -149,9 +149,9 @@ interface EntityCollection {
 	
 	/**
 	* The `distinctPaths()` method returns an array of all paths to the given `object` type attribute properties.
-	* @param objectAttribute DatastoreClassAttribute	Indexed `Object` attribute for which you want to get the list of distinct paths
+	* @param objectAttribute DatastoreClassAttribute	The indexed object attribute name 
 	* @returns A sorted array of strings
-	* @warning The indexed object attribute name
+	* @warning The object attribute whose name is given as a parameter must be indexed
 	* 
 	* #### Example: Get a list of all distinct paths available 
 	* ```javascript

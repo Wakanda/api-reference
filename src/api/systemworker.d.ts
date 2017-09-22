@@ -3,8 +3,8 @@
 
 interface SystemWorker {
     /**
-     * Calls a system worker (asynchronous mode).
-     * Use the system worker proxy to get the result.
+     * Creates a system worker (asynchronous mode).
+     * Use the system worker proxy to get the command output.
      * 
      * #### Example 1: Do a simple CLI command
      * ```javascript
@@ -101,7 +101,7 @@ interface SystemWorker {
      */
     new (cli: String[], options?: WAKSystemWorkerOptions): WAKSystemWorkerProxy;
     /**
-     * Calls to system worker and waits for its response (synchronous mode).
+     * Runs the given command and waits for its response (synchronous mode).
      * 
      * #### Example 1: Do a simple CLI command
      * ```javascript

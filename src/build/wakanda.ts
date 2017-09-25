@@ -1148,9 +1148,11 @@ interface WAKConsole {
 }
 
 
-/** FRED TEST */
 interface Datastore {
-    
+	/**
+	* Accepts the transaction opened by the `ds.startTransaction()` method at the corresponding level in the current context
+	*/
+	commit() : void;
 	/**
 	*Collection of available datastore classes
 	*/
@@ -1196,13 +1198,46 @@ interface Datastore {
 	*/
 	importFromJSON(importFolder: WAKFolderInstance) : void;
 	/**
+	* Pause a transaction opened by the `ds.startTransaction()` method in the current context
+	*/
+	pauseTransaction() : void;
+	/**
+	* Resume a transaction paused by the `ds.pauseTransaction()` method in the current context
+	*/
+	resumeTransaction() : void;
+	/**
 	*looks for any "ghost" tables in the data file of your application and adds the corresponding datastore classes to the loaded model
 	*/
 	revealGhostTables() : void;
 	/**
+	* Cancels the transaction opened by the `ds.startTransaction()` method at the corresponding level in the current context
+	*/
+	rollback() : void;
+	/**
 	*increase dynamically the datastore cache size
 	*/
 	setCacheSize(newSize: Number) : void;
+	/**
+	* Starts a transaction in the current context
+	*
+	* #### Example
+	*```javascript
+	* model.Invoice.events.remove = function(){
+    * 	if (this.invoiceItems.length != 0){
+    * 		ds.startTransaction();			//start a transaction
+    * 		this.invoiceItems.remove();		//attempt to delete the invoiceItems
+    * 		// if all went well, the commit will be done automatically
+    * 		// if there is an error, the transaction will rollback
+    * 	}
+	* }
+	*```
+	*/
+	startTransaction() : void;
+	/**
+	* Returns the level of the current transaction for the context
+	* @return Number Level of the current transaction (0 if no transaction was started)
+	*/
+	transactionLevel() : Number;
 }
 
 
@@ -1763,8 +1798,27 @@ interface DatastoreClass {
 	setAutoSequenceNumber(counter: Number) : void;
 	
 	
-	
-	
+	/**
+	* `setCollectionPageLength` sets the default dataclass page size returned by each query. This setting is only applied to the current dataclass.
+	* @warning This method can only be used on Wakanda/4D remote datastore dataclasses.
+	* @param pageSize Number of entities return by each query
+	*
+	* #### Example
+	* ```javascript
+	* myRemoteDatastore.Employees.setCollectionPageLength(80);
+	* ```
+	*/
+	setCollectionPageLength(pageSize: Number) : void;
+	/**
+	* `getCollectionPageLength` returns the default page size of a dataclass.
+	* @returns Dataclass page size.
+	* 
+	* #### Example
+	* ```javascript
+	* myRemoteDatastore.Employees.getCollectionPageLength();
+	* ```
+	*/
+	getCollectionPageLength() : Number;
 	
 	
 	
@@ -1855,6 +1909,7 @@ interface AttributeEnumerator{
 interface AttributeEnumerator {
     [attributeName: string]: DatastoreClassAttribute;
 }
+
 
 interface DatastoreClassEnumerator {
     [dataClassName: string]: DatastoreClass;
@@ -2375,25 +2430,46 @@ interface EntityCollection {
 	*/
 	count(attribute: DatastoreClassAttribute, distinct?: Boolean) : Number;
 	
+	/**
+	* The `distinctPaths()` method returns an array of all paths to the given `object` type attribute properties.
+	* @param objectAttribute DatastoreClassAttribute	The indexed object attribute name 
+	* @returns A sorted array of strings
+	* @warning The object attribute whose name is given as a parameter must be indexed
+	* 
+	* #### Example: Get a list of all distinct paths available 
+	* ```javascript
+	* var allProducts = ds.Products.all();
+	* var allPaths = allProducts.distinctPaths("type"); //job is a DatastoreClassAttribute of Employee
+	* // Returns [
+		"computer",
+		"computer.desktop",
+		"computer.laptop",
+		"pen",
+		"phone",
+		"phone.smartphone"
+	]
+	* ``` 
+	*/
+	distinctPaths(objectAttribute: DatastoreClassAttribute): any[];
 	
 	/**
-	* The distinctValues( ) method creates an array and returns in it all the distinct values stored in attribute for the entity collection or datastore class
+	* The `distinctValues()` method creates an array and returns in it all the distinct values stored in attribute for the entity collection or datastore class
 	* @param attribute DatastoreClassAttribute 		Attribute for which you want to get the list of distinct values
-	* @returns  Array containing the list of distinct values
+	* @returns Array containing the list of distinct values
 	* #### Example 1
 	* ```javascript
 	* //In our example, we want to return the total number of different jobs in the same company:
     *
-	* var employer = ds.Company.find( "name == :1", "WAKANDA" ) ;  // find the company by its name
+	* var employer = ds.Company.find( "name == :1", "WAKANDA" );  // find the company by its name
 	* var allEmp = ds.Employee.query("comp == :1", employer); // create an entity collection containing all the employees in a company
 	* // 'comp' is a relation attribute in Employee
-	*  var jobNb = allEmp.distinctValues("jobName").length; //`jobName` is a DatastoreClassAttribute of Employee
+	* var jobNb = allEmp.distinctValues("jobName").length; //`jobName` is a DatastoreClassAttribute of Employee
     * ``` 
 	* #### Example 2 - distinctValues with Object Attributes.
 	* ```javascript
 	* // In a "keywords" object attribute of an Article datastore class, you store the page numbers for each keyword in a "pages" array. 
 	* // You want to know all pages that contain at least one keyword
-	*  var arr = ds.Article.all().distinctValues("keywords.pages[]");
+	* var arr = ds.Article.all().distinctValues("keywords.pages[]");
 	* ``` 
 	*/
 	distinctValues(attribute: DatastoreClassAttribute): any[];
@@ -2810,7 +2886,26 @@ interface EntityCollection {
 	sum(attribute: DatastoreClassAttribute, distinct?: Boolean) : Number;
 
 
-
+	/**
+	* The `slice()` method returns a shallow copy of a portion of a collection into a new collection object selected from begin to end (end not included). The original collection will not be modified.
+	* @param begin Zero-based index at which to begin extraction
+	* @param end Zero-based index before which to end extraction. `slice` extracts up to but not including end.
+	* @return `slice` does not alter the original collection. It returns a shallow copy of elements from the original collection.
+	*
+	* #### Examples
+	* ```javascript
+	* var originalCollection = ds.Employees.query("ID < 100").orderBy("salary desc");
+	* // Get a copy of the collection
+	* var copyCatColl = originalCollection.splice();
+	* // Get the first 10 and give them a good raise
+	* var firstTenColl = originalCollection.splice(0,10);
+	* // Get the last 10
+	* var lastTenColl = originalCollection.splice(-10); 
+	* // Exclude first and last 10 and give them a decent raise
+	* var middleGuysColl = originalCollection.splice(10, -10);
+	* ```
+	*/
+	splice(begin?: Number, end?: Number) : Number;	
 
 
 	/**
@@ -2872,6 +2967,7 @@ interface EntityCollection {
 interface DatastoreClassAttribute extends String {
 	
 }
+
 
 
 
@@ -4895,11 +4991,14 @@ interface WAKSharedWorkerProxy {
 		write(data: WAKBufferInstance, encoding: String) : Boolean;
 	}interface LockableKeyValueStorage extends KeyValueStorage {
     /**
-     * Locks the storage object. Only the current thread can read or modify the storage object.
+     * Locks the storage object or waits until it can be locked. When a thread calls this method,
+     * it becomes the only thread able to read or modify the storage object until it unlocks it.
+     * This is a blocking method. See `tryLock()` method for a non blocking method.
      */
     lock(): void;
     /**
      * Tries to lock the storage object. Returns `true` in case of success and false otherwise.
+     * This is a non blocking method. See `lock()` method for a blocking method.
      */
     tryLock(): Boolean;
     /**
@@ -4932,10 +5031,11 @@ interface KeyValueStorage {
 }
 
 
+
 interface SystemWorker {
     /**
-     * Calls a system worker (asynchronous mode).
-     * Use the system worker proxy to get the result.
+     * Creates a system worker (asynchronous mode).
+     * Use the system worker proxy to get the command output.
      * 
      * #### Example 1: Do a simple CLI command
      * ```javascript
@@ -5032,8 +5132,7 @@ interface SystemWorker {
      */
     new (cli: String[], options?: WAKSystemWorkerOptions): WAKSystemWorkerProxy;
     /**
-     * Calls a system worker (asynchronous mode).
-     * Use the system worker proxy to get the result.
+     * Runs the given command and waits for its response (synchronous mode).
      * 
      * #### Example 1: Do a simple CLI command
      * ```javascript

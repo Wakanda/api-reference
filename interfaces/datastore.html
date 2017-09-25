@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -67,13 +66,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>FRED TEST</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -95,6 +87,7 @@
 						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#commit" class="tsd-kind-icon">commit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#exportasjson" class="tsd-kind-icon">export<wbr>AsJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#exportassql" class="tsd-kind-icon">export<wbr>AsSQL</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#flushcache" class="tsd-kind-icon">flush<wbr>Cache</a></li>
@@ -105,8 +98,13 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#gettempfolder" class="tsd-kind-icon">get<wbr>Temp<wbr>Folder</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#importfromjson" class="tsd-kind-icon">import<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#pausetransaction" class="tsd-kind-icon">pause<wbr>Transaction</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#resumetransaction" class="tsd-kind-icon">resume<wbr>Transaction</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#revealghosttables" class="tsd-kind-icon">reveal<wbr>Ghost<wbr>Tables</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#rollback" class="tsd-kind-icon">rollback</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#setcachesize" class="tsd-kind-icon">set<wbr>Cache<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#starttransaction" class="tsd-kind-icon">start<wbr>Transaction</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="datastore.html#transactionlevel" class="tsd-kind-icon">transaction<wbr>Level</a></li>
 							</ul>
 						</section>
 					</div>
@@ -120,7 +118,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Classes<span class="tsd-signature-symbol">:</span> <a href="datastoreclassenumerator.html" class="tsd-signature-type">DatastoreClassEnumerator</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L9">datastore.d.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L11">datastore.d.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -133,6 +131,28 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="commit" class="tsd-anchor"></a>
+					<h3>commit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">commit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L7">datastore.d.ts:7</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Accepts the transaction opened by the <code>ds.startTransaction()</code> method at the corresponding level in the current context</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="exportasjson" class="tsd-anchor"></a>
 					<h3>export<wbr>AsJSON</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
@@ -142,7 +162,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L13">datastore.d.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L15">datastore.d.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -179,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L17">datastore.d.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L19">datastore.d.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -216,7 +236,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L21">datastore.d.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L23">datastore.d.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -238,7 +258,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L25">datastore.d.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L27">datastore.d.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -260,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L29">datastore.d.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L31">datastore.d.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -282,7 +302,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L33">datastore.d.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L35">datastore.d.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -310,7 +330,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L37">datastore.d.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L39">datastore.d.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -332,7 +352,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L41">datastore.d.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L43">datastore.d.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -354,7 +374,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L45">datastore.d.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L47">datastore.d.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -376,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L49">datastore.d.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L51">datastore.d.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,6 +415,50 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="pausetransaction" class="tsd-anchor"></a>
+					<h3>pause<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">pause<wbr>Transaction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L55">datastore.d.ts:55</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Pause a transaction opened by the <code>ds.startTransaction()</code> method in the current context</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="resumetransaction" class="tsd-anchor"></a>
+					<h3>resume<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">resume<wbr>Transaction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L59">datastore.d.ts:59</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Resume a transaction paused by the <code>ds.pauseTransaction()</code> method in the current context</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 					<a name="revealghosttables" class="tsd-anchor"></a>
 					<h3>reveal<wbr>Ghost<wbr>Tables</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
@@ -404,12 +468,34 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L53">datastore.d.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L63">datastore.d.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>looks for any &quot;ghost&quot; tables in the data file of your application and adds the corresponding datastore classes to the loaded model</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="rollback" class="tsd-anchor"></a>
+					<h3>rollback</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">rollback<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L67">datastore.d.ts:67</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Cancels the transaction opened by the <code>ds.startTransaction()</code> method at the corresponding level in the current context</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -426,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/32ad536/src/api/datastore.d.ts#L57">datastore.d.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L71">datastore.d.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -441,6 +527,61 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="starttransaction" class="tsd-anchor"></a>
+					<h3>start<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Transaction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L87">datastore.d.ts:87</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Starts a transaction in the current context</p>
+								</div>
+								<h4 id="example">Example</h4>
+								<pre><code class="lang-javascript">model.Invoice.events.remove = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.invoiceItems.length != <span class="hljs-number">0</span>){
+        ds.startTransaction();            <span class="hljs-comment">//start a transaction</span>
+        <span class="hljs-keyword">this</span>.invoiceItems.remove();        <span class="hljs-comment">//attempt to delete the invoiceItems</span>
+        <span class="hljs-comment">// if all went well, the commit will be done automatically</span>
+        <span class="hljs-comment">// if there is an error, the transaction will rollback</span>
+    }
+}
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+					<a name="transactionlevel" class="tsd-anchor"></a>
+					<h3>transaction<wbr>Level</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">transaction<wbr>Level<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/6c57f05/src/api/datastore.d.ts#L92">datastore.d.ts:92</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the level of the current transaction for the context</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Number</span></h4>
+							<p>Number Level of the current transaction (0 if no transaction was started)</p>
 						</li>
 					</ul>
 				</section>
@@ -463,6 +604,9 @@
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="datastore.html#dataclasses" class="tsd-kind-icon">data<wbr>Classes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="datastore.html#commit" class="tsd-kind-icon">commit</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="datastore.html#exportasjson" class="tsd-kind-icon">export<wbr>AsJSON</a>
@@ -495,10 +639,25 @@
 								<a href="datastore.html#importfromjson" class="tsd-kind-icon">import<wbr>FromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="datastore.html#pausetransaction" class="tsd-kind-icon">pause<wbr>Transaction</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="datastore.html#resumetransaction" class="tsd-kind-icon">resume<wbr>Transaction</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="datastore.html#revealghosttables" class="tsd-kind-icon">reveal<wbr>Ghost<wbr>Tables</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="datastore.html#rollback" class="tsd-kind-icon">rollback</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
 								<a href="datastore.html#setcachesize" class="tsd-kind-icon">set<wbr>Cache<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="datastore.html#starttransaction" class="tsd-kind-icon">start<wbr>Transaction</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
+								<a href="datastore.html#transactionlevel" class="tsd-kind-icon">transaction<wbr>Level</a>
 							</li>
 						</ul>
 					</li>

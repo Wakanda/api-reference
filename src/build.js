@@ -31,7 +31,11 @@ function cleanOutput(output){
 function runCommand(cmd, callback){
 	var exec = require('child_process').exec;
 	
-	exec(cmd,callback);
+	exec(cmd,callback || function(err, stdout, stderr){
+		console.log('err:', err);
+		console.log('stout:', stdout);
+		console.log('sterr:', stderr);
+	});
 }
 
 console.log("Reading global scope declarations..");
@@ -41,7 +45,7 @@ concatenateFiles("api", "build/wakanda.ts", globalDeclarations);
 console.log("Concatenating Wakanda Model API files..");
 concatenateFiles("model", "build/model.ts");
 console.log("Generating documentation..");
-runCommand("typedoc --theme ./themes/default --hideGenerator --noLib --ignoreCompilerErrors --includeDeclarations --mode file --readme ./index.md --out ./docs ./api/application.d.ts");
+runCommand("typedoc --theme default --hideGenerator --nolib --ignoreCompilerErrors --includeDeclarations --mode file --readme ./index.md --out ./docs ./api/application.d.ts");
 var outputFile = "./build/wakanda.ts";
 var output = cleanOutput(fs.readFileSync(outputFile, 'utf8'));
 fs.writeFileSync(outputFile, output, 'utf8');

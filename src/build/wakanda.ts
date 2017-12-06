@@ -2905,7 +2905,7 @@ interface EntityCollection {
 	* var middleGuysColl = originalCollection.splice(10, -10);
 	* ```
 	*/
-	splice(begin?: Number, end?: Number) : Number;	
+	splice(begin?: Number, end?: Number) : EntityCollection;	
 
 
 	/**

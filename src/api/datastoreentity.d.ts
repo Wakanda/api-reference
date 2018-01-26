@@ -113,7 +113,7 @@ interface Entity {
 	*
 	* <details> <summary>**Note** : How to use this method (advanced) : </summary>
 	* ***
-	* ````text
+	* ```
 	* Once unloaded by this method, the entity is not unusable. 
 	* Wakanda keeps a reference to the entity and automatically reloads it as soon as it becomes used again.
 	* This utility method lets you optimize memory consumption when the server needs to load and work with numerous large objects, such as pictures or BLOBs. 

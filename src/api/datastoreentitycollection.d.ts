@@ -613,16 +613,16 @@ interface EntityCollection {
 	* ```javascript
 	* var originalCollection = ds.Employees.query("ID < 100").orderBy("salary desc");
 	* // Get a copy of the collection
-	* var copyCatColl = originalCollection.splice();
+	* var copyCatColl = originalCollection.slice();
 	* // Get the first 10 and give them a good raise
-	* var firstTenColl = originalCollection.splice(0,10);
+	* var firstTenColl = originalCollection.slice(0,10);
 	* // Get the last 10
-	* var lastTenColl = originalCollection.splice(-10); 
+	* var lastTenColl = originalCollection.slice(-10); 
 	* // Exclude first and last 10 and give them a decent raise
-	* var middleGuysColl = originalCollection.splice(10, -10);
+	* var middleGuysColl = originalCollection.slice(10, -10);
 	* ```
 	*/
-	splice(begin?: Number, end?: Number) : EntityCollection;	
+	slice(begin?: Number, end?: Number) : EntityCollection;	
 
 
 	/**

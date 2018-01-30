@@ -123,7 +123,7 @@ interface SharedWorker {
      * @param workerName Describes the worker name
      * @returns Returns a shared worker proxy
      */
-    new (scriptPath: String, workerName?: String): WAKSharedWorkerProxy;
+    new (scriptPath: String | File, workerName?: String): WAKSharedWorkerProxy;
 }
 
 interface WAKSharedWorkerProxy {

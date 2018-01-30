@@ -130,7 +130,7 @@ interface NodeWorker {
      * @param workerName Describes the worker name
      * @returns Returns a node worker proxy
      */
-    new (scriptPath: String, workerName?: String): WAKNodeWorkerProxy;
+    new (scriptPath: String | File, workerName?: String): WAKNodeWorkerProxy;
 }
 
 interface WAKNodeWorkerProxy {

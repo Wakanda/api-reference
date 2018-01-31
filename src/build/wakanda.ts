@@ -2028,7 +2028,7 @@ interface Entity {
 	*
 	* <details> <summary>**Note** : How to use this method (advanced) : </summary>
 	* ***
-	* ````text
+	* ```
 	* Once unloaded by this method, the entity is not unusable. 
 	* Wakanda keeps a reference to the entity and automatically reloads it as soon as it becomes used again.
 	* This utility method lets you optimize memory consumption when the server needs to load and work with numerous large objects, such as pictures or BLOBs. 
@@ -2896,16 +2896,16 @@ interface EntityCollection {
 	* ```javascript
 	* var originalCollection = ds.Employees.query("ID < 100").orderBy("salary desc");
 	* // Get a copy of the collection
-	* var copyCatColl = originalCollection.splice();
+	* var copyCatColl = originalCollection.slice();
 	* // Get the first 10 and give them a good raise
-	* var firstTenColl = originalCollection.splice(0,10);
+	* var firstTenColl = originalCollection.slice(0,10);
 	* // Get the last 10
-	* var lastTenColl = originalCollection.splice(-10); 
+	* var lastTenColl = originalCollection.slice(-10); 
 	* // Exclude first and last 10 and give them a decent raise
-	* var middleGuysColl = originalCollection.splice(10, -10);
+	* var middleGuysColl = originalCollection.slice(10, -10);
 	* ```
 	*/
-	splice(begin?: Number, end?: Number) : EntityCollection;	
+	slice(begin?: Number, end?: Number) : EntityCollection;	
 
 
 	/**
@@ -4600,7 +4600,7 @@ interface NodeWorker {
      * @param workerName Describes the worker name
      * @returns Returns a node worker proxy
      */
-    new (scriptPath: String, workerName?: String): WAKNodeWorkerProxy;
+    new (scriptPath: String | File, workerName?: String): WAKNodeWorkerProxy;
 }
 
 interface WAKNodeWorkerProxy {
@@ -4857,7 +4857,7 @@ interface SharedWorker {
      * @param workerName Describes the worker name
      * @returns Returns a shared worker proxy
      */
-    new (scriptPath: String, workerName?: String): WAKSharedWorkerProxy;
+    new (scriptPath: String | File, workerName?: String): WAKSharedWorkerProxy;
 }
 
 interface WAKSharedWorkerProxy {

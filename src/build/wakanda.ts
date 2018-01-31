@@ -5720,6 +5720,10 @@ interface XMLHttpRequest {
      */
     new (proxy?: Object): XMLHttpRequest;
     /**
+     * Defines a XHR timeout in millisecond. Default is 0 for an infinite timeout.
+     */
+    timeout: number;
+    /**
      * Current state of the request.
      * See [doc center](http://doc.wakanda.org/home2.en.html#/Wakanda Studio/0.Beta/readyState.303-867831.en.html) for more details about xhr states.
      */

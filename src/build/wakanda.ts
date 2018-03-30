@@ -1212,7 +1212,7 @@ interface Datastore {
 	/**
 	* Cancels the transaction opened by the `ds.startTransaction()` method at the corresponding level in the current context
 	*/
-	rollback() : void;
+	rollBack() : void;
 	/**
 	*increase dynamically the datastore cache size
 	*/

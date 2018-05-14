@@ -141,21 +141,18 @@ interface DatastoreClass {
 	
 	
 	/**
-	* creates a new blank object of type EntityCollection attached to the datastore class 
+	* Creates a empty EntityCollection attached to the datastore class.
+	* **sorted collection:** Collection that can sort (if required) the entities in its collection and that can keep track of duplicated entities. By default, it doesn't sort the collection.
+	* **unsorted collection:** Collection that cannot sort the entities in its collection and cannot keep track of duplicated entities.
+	* Visit Doc Center for more information on sorted/unsorted collection, [here](http://doc.wakanda.org/home2.en.html#/Datastore/Entity-Collection/Unsorted-vs-Sorted-Entity-Collections.300-932765.en.html) and [here](http://doc.wakanda.org/home2.en.html#/Datastore/Datastore-Class/createEntityCollection.301-616856.en.html)
 	*
-	* @param keepSorted Boulean - `True` to create a SortedCollection (`false` by Default)
+	* @warning **createEntityCollection** works with Wakanda DB and is not implemented on Wakanda Connectors.
 	*
-	*
-	* #### Note
-	* For more information about sorted/unsorted collection, [visit this page](http://doc.wakanda.org/Datastore/Entity-Collection/Unsorted-vs-Sorted-Entity-Collections.300-932765.en.html)
-	*
-	* @warning = **createEntityCollection** do work only with Wakanda built-in DB. It does not work with MySQL / ODBC Connectors*
-	* 
-	* #### Example 1
+	* #### Example
 	* ```javascript
-	* var all = ds.Person.all(); // get all the entities
-	* var coll1 = ds.Person.createEntityCollection(); // create an empty unsorted entity collection
-	* coll1.add( all[10]); //add some entities, one of them 3 times
+	* var all = ds.Person.all(); // Get all the entities
+	* var coll1 = ds.Person.createEntityCollection(); // Create an empty unsorted entity collection
+	* coll1.add( all[10]); //Add some entities, one of them 3 times
 	* coll1.add( all[9]);
 	* coll1.add( all[8]);
 	* coll1.add( all[7]);
@@ -163,6 +160,8 @@ interface DatastoreClass {
 	* coll1.add( all[8]);
 	* coll1; // displays the collection
 	* ```
+	*
+	* @param keepSorted Boolean - (default: `false`) `true` is the collection needs to be sorted; `false` otherwise.
 	*/
 	createEntityCollection(keepSorted?: Boolean) : EntityCollection;
 	

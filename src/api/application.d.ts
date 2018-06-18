@@ -103,6 +103,22 @@ interface WAKCore {
      */
     console: WAKConsole;
     /**
+     * Defines an exception listener. It calls the `onUncaughtException()` function of `moduleId` JS module.
+     * 
+     * ```javascript
+     * // from PROJECT/bootstrap.js
+     * setExceptionListener('exception-listener');
+     *    
+     * // from PROJECT/modules/exception-listener/index.js
+     * exports.onUncaughtException = function(exception: Object) {
+     *     console.log('>>> Exception catched: ', exception);       
+     * };
+     * ```
+     * 
+     * @param moduleId @param moduleId Describes the module id and path from `/modules/` directory
+     */
+    setExceptionListener(moduleId: String): void;
+    /**
      * Defines a log listener. It calls the `log()` function of `moduleId` JS module.
      * 
      * @warning This is an enterprise feature
@@ -115,7 +131,7 @@ interface WAKCore {
      * // from PROJECT/modules/log-listener/index.js
      * var mail = require('waf-mail/mail');
      * 
-     * exports.log = function(logArray) {
+     * exports.log = function(logArray: Array) {
      *      
      *     logArray.forEach(function(logObject){
      * 

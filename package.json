@@ -1,0 +1,41 @@
+{
+  "name": "api-reference",
+  "version": "2.7.0",
+  "description": "Wakanda API Reference",
+  "main": "./src/build.js",
+  "scripts": {
+    "build": "node .",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/build.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wakanda/api-reference.git"
+  },
+  "keywords": [
+    "wakanda",
+    "doc",
+    "api"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "husky": "^2.3.0",
+    "prettier": "^1.17.1"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "glob": "^7.1.4",
+    "typedoc": "^0.14.2"
+  }
+}

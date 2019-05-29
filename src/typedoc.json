@@ -1,0 +1,11 @@
+{
+  "theme": "default",
+  "hideGenerator": true,
+  "nolib": true,
+  "ignoreCompilerErrors": true,
+  "includeDeclarations": true,
+  "mode": "file",
+  "readme": "./index.md",
+  "exclude": "**/node_modules/**",
+  "name": " "
+}

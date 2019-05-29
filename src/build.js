@@ -1,52 +1,136 @@
-var fs		= require('fs');
+/* eslint-disable no-console */
+const glob = require('glob');
+const { promisify } = require('util');
+const { resolve } = require('path');
+const { readFile, writeFile } = require('fs');
+const { spawn } = require('child_process');
 
-function getGlobalDeclaration(){
+const glob$ = promisify(glob);
+const readFile$ = promisify(readFile);
+const writeFile$ = promisify(writeFile);
 
-	var content = fs.readFileSync('global.ts', 'utf8');
-	return content;
+const SRC_FOLDER = resolve('src');
+
+/**
+ * Remove un-needed TS references
+ * @param {String} str The string
+ * @returns Cleaned output
+ */
+exports.sanitize = (str = '') => {
+  return str.replace(new RegExp('///.*', 'g'), '');
 }
 
-function concatenateFiles(folderPath, outputFile, initialContent){
-	var files  = fs.readdirSync(folderPath);
-	var output = initialContent || "";
-	
-	files.forEach(function(file){
-		// Concat only .d.ts files
-		if (! file.match(/.*\.d\.ts$/gi) ){
- 			return;
-		}
+/**
+ * Concats all .ts file and output the content in a single file
+ * @param {String} folder The base folder
+ * @param {String} output The output file
+ * @returns {boolean} true if everything was successfully done, else otherwise
+ */
+exports.concatAll = async (folder = 'api', output = 'build/wakanda.ts', isAddGlobal = true) => {
+  let allTSFiles = [];
+  let content;
 
-		output += fs.readFileSync(folderPath + "/" + file, 'utf8');		
-	});
-	output = cleanOutput(output);
-	fs.writeFileSync(outputFile, output, 'utf8');
-}
+  if (isAddGlobal === true) {
+    allTSFiles.push('./global.ts');
+  }
 
-function cleanOutput(output){
-	output = output.replace(new RegExp("///.*","g"), "");
-	
-	return output;
-}
+  try {
+    const apiFiles = await glob$(`${folder}/**/*.d.ts`, {
+      cwd: SRC_FOLDER,
+    });
+    allTSFiles = allTSFiles.concat(apiFiles);
+  } catch (e) {
+    console.warn('Unable to read API TS Files', folder, e);
+  }
 
-function runCommand(cmd, callback){
-	var exec = require('child_process').exec;
-	
-	exec(cmd,callback || function(err, stdout, stderr){
-		console.log('err:', err);
-		console.log('stout:', stdout);
-		console.log('sterr:', stderr);
-	});
-}
+  // Add global.ts file then read all files
+  const contents$ = allTSFiles.map(f => readFile$(resolve(SRC_FOLDER, f), {
+    encoding: 'utf8',
+  }));
 
-console.log("Reading global scope declarations..");
-var globalDeclarations = getGlobalDeclaration();
-console.log("Concatenating Wakanda API files..");
-concatenateFiles("api", "build/wakanda.ts", globalDeclarations);
-console.log("Concatenating Wakanda Model API files..");
-concatenateFiles("model", "build/model.ts");
-console.log("Generating documentation..");
-runCommand("typedoc --theme default --hideGenerator --nolib --ignoreCompilerErrors --includeDeclarations --mode file --readme ./index.md --out ./docs ./api/application.d.ts");
-var outputFile = "./build/wakanda.ts";
-var output = cleanOutput(fs.readFileSync(outputFile, 'utf8'));
-fs.writeFileSync(outputFile, output, 'utf8');
-console.log("Done.");
+  try {
+    content = await Promise.all(contents$);
+    content = content.join('');
+    content = exports.sanitize(content);
+  } catch (e) {
+    console.error('Unable to read the content of TS files', e);
+    return false;
+  }
+
+  try {
+    await writeFile$(resolve(SRC_FOLDER, output), content, 'utf8');
+  } catch (e) {
+    console.error('Unable to write the content of TS files into the output file', e);
+    return false;
+  }
+
+  return true;
+};
+
+/**
+ * Generate JS doc
+ */
+exports.generate = () => new Promise((done) => {
+  const cmd = spawn(
+    'npx',
+    [
+      'typedoc',
+      '--out',
+      './docs',
+      './api/application.d.ts',
+    ],
+    {
+      cwd: SRC_FOLDER,
+      stdio: 'inherit',
+    },
+  );
+
+  cmd.on('close', (code) => {
+    console.log(`typedoc process exited with code ${code}`);
+    done();
+  });
+
+  cmd.on('error', (data) => {
+    console.log(`err: ${data}`);
+  });
+
+  // cmd.stdout.on('data', (data) => {
+  //   console.log(`stdout: ${data}`);
+  // });
+
+  // cmd.stderr.on('data', (data) => {
+  //   console.log(`sterr: ${data}`);
+  // });
+});
+
+/**
+ * Sanitizes the file content
+ * @param {String} filePath the path of the file to sanitize
+ */
+exports.sanitizeFile = async (filePath = './build/wakanda.ts') => {
+  try {
+    let content = await readFile$(resolve(SRC_FOLDER, filePath), {
+      encoding: 'utf8'
+    });
+    content = exports.sanitize(content);
+    await writeFile$(resolve(SRC_FOLDER, filePath), content, {
+      encoding: 'utf8'
+    });
+  } catch (e) {
+    console.error('Error occured while sanitizing the file %s', filePath, e);
+    return false;
+  }
+
+  return true;
+};
+
+(async () => {
+  console.log('Concatenating Wakanda API files...');
+  await exports.concatAll();
+  console.log('Concatenating Wakanda Model API files...');
+  await exports.concatAll('model', 'build/model.ts', false);
+  console.log('Generating documentation...');
+  await exports.generate();
+  console.log('Sanitizing wakanda.ts file...');
+  await exports.sanitizeFile();
+})();

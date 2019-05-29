@@ -122,6 +122,7 @@ var XMLHttpRequest = application.XMLHttpRequest;
 
 
 
+
 interface Application extends WAKAuthentication, WAKData, WAKCore, WAKThreads, WAKFileSystem, WAKHTTP, WAKStorage { }
 
 interface WAKAuthentication {
@@ -136,6 +137,10 @@ interface WAKData {
      * References the datastore of the application.
      */
     ds: Datastore;
+    /**
+     * References the model object of the application
+     */
+    model: WakModel;
     /**
     *Starts the backup of the closed datastore defined by model and data.
     */
@@ -3934,6 +3939,121 @@ interface Group {
 }
 
 
+
+interface HTTPRequest {
+    /**
+     * Body of the received message.
+     */
+    body: String | Image | WAKBlobInstance;
+    /**
+     * Content-type of the request as defined in the header.
+     */
+    contentType: String;
+    /**
+     * Header of the HTTPRequest.
+     */
+    headers: String[];
+    /**
+     * Host header of the request.
+     */
+    host: String;
+    /**
+     * True if the connection uses SSL, false otherwise.
+     */
+    isSSL: Boolean;
+    /**
+     * Local server IP address (IPv4 or IPv6).
+     */
+    localAddress: String;
+    /**
+     * Local server port number.
+     */
+    localPort: Number;
+    /**
+     * HTTP method name.
+     */
+    method: String;
+    /**
+     * Parts of a HTTP body (for multipart forms).
+     */
+    parts: MIMEMessage;
+    /**
+     * User password for authentified requests (BASIC mode only).
+     */
+    password: String;
+    /**
+     * Raw URL of the request.
+     */
+    rawURL: String;
+    /**
+     * Remote client IP address (IPv4 or IPv6).
+     */
+    remoteAddress: String;
+    /**
+     * Remote client port number.
+     */
+    remotePort: Number;
+    /**
+     * Request-line received by the server.
+     */
+    requestLine: String;
+    /**
+     * Decoded URL of the request.
+     */
+    url: String;
+    /**
+     * Path part of the request.
+     */
+    urlPath: String;
+    /**
+     * Query part of the request.
+     */
+    urlQuery: String;
+    /**
+     * User name for authentified request.
+     */
+    user: String;
+    /**
+     * Version of the HTTP protocol.
+     */
+    version: String;
+}
+
+
+interface HTTPResponse {
+    /**
+     * Body of the returned message to set.
+     */
+    body: WAKBlobInstance | Image | String;
+    /**
+     * Content-type of the response to set.
+     */
+    contentType: String;
+    /**
+     * Header of the HTTPResponse.
+     */
+    headers: String[];
+    /**
+     * Return status code to set.
+     */
+    statusCode: Number;
+    /**
+     * Indicates if the contents of the HTTPResponse should be cached on the server.
+     */
+    allowCache(useCache: Boolean): void;
+    /**
+     * Sets custom compression thresholds for the HTTPResponse.
+     * @param minThreshold Minimum size (in bytes) below which the response should not be compressed or -1 to use default value
+     * @param maxThreshold Maximum size (in bytes) up to which the response should not be compressed or -1 to use default value
+     */
+    allowCompression(minThreshold: Number, maxThreshold: Number): void;
+    /**
+     * Sends an HTTPResponse in chunks without knowing in advance the size of the data.
+     */
+    sendChunkedData(data: String | Image | WAKBlobInstance): void;
+}
+
+
 interface HttpServer {
     /**
      * Cache properties of the HTTP server.
@@ -4117,121 +4237,6 @@ interface HttpServerSSL {
 }
 
 
-
-
-interface HTTPRequest {
-    /**
-     * Body of the received message.
-     */
-    body: String | Image | WAKBlobInstance;
-    /**
-     * Content-type of the request as defined in the header.
-     */
-    contentType: String;
-    /**
-     * Header of the HTTPRequest.
-     */
-    headers: String[];
-    /**
-     * Host header of the request.
-     */
-    host: String;
-    /**
-     * True if the connection uses SSL, false otherwise.
-     */
-    isSSL: Boolean;
-    /**
-     * Local server IP address (IPv4 or IPv6).
-     */
-    localAddress: String;
-    /**
-     * Local server port number.
-     */
-    localPort: Number;
-    /**
-     * HTTP method name.
-     */
-    method: String;
-    /**
-     * Parts of a HTTP body (for multipart forms).
-     */
-    parts: MIMEMessage;
-    /**
-     * User password for authentified requests (BASIC mode only).
-     */
-    password: String;
-    /**
-     * Raw URL of the request.
-     */
-    rawURL: String;
-    /**
-     * Remote client IP address (IPv4 or IPv6).
-     */
-    remoteAddress: String;
-    /**
-     * Remote client port number.
-     */
-    remotePort: Number;
-    /**
-     * Request-line received by the server.
-     */
-    requestLine: String;
-    /**
-     * Decoded URL of the request.
-     */
-    url: String;
-    /**
-     * Path part of the request.
-     */
-    urlPath: String;
-    /**
-     * Query part of the request.
-     */
-    urlQuery: String;
-    /**
-     * User name for authentified request.
-     */
-    user: String;
-    /**
-     * Version of the HTTP protocol.
-     */
-    version: String;
-}
-
-
-interface HTTPResponse {
-    /**
-     * Body of the returned message to set.
-     */
-    body: WAKBlobInstance | Image | String;
-    /**
-     * Content-type of the response to set.
-     */
-    contentType: String;
-    /**
-     * Header of the HTTPResponse.
-     */
-    headers: String[];
-    /**
-     * Return status code to set.
-     */
-    statusCode: Number;
-    /**
-     * Indicates if the contents of the HTTPResponse should be cached on the server.
-     */
-    allowCache(useCache: Boolean): void;
-    /**
-     * Sets custom compression thresholds for the HTTPResponse.
-     * @param minThreshold Minimum size (in bytes) below which the response should not be compressed or -1 to use default value
-     * @param maxThreshold Maximum size (in bytes) up to which the response should not be compressed or -1 to use default value
-     */
-    allowCompression(minThreshold: Number, maxThreshold: Number): void;
-    /**
-     * Sends an HTTPResponse in chunks without knowing in advance the size of the data.
-     */
-    sendChunkedData(data: String | Image | WAKBlobInstance): void;
-}
-
 /**
  * @warning The Image API is partially supported on Linux platforms:
  * - You can only load images of the PNG or JPG types
@@ -4414,7 +4419,108 @@ interface MIMEMessagePart {
      */
     save(filePath: String, overWrite?: Boolean): void;
 }
+interface WakModelRequest {
+    /**
+     * Contains the decoded URL of the request.
+     */
+    url: String;
+    /**
+     * Contains the host header of the request.
+     */
+    host: String;
+    /**
+     * Contains the port number of the remote server.
+     */
+    port: String;
+    /**
+     * Contains the path part of the request.
+     */
+    path: String;
+    /**
+     * Contains the query part of the request.
+     */
+    query: String;
+    /**
+     * A key/value object containing the parameters list
+     */
+    parameters: any;
+    /**
+     * Contains the HTTP method name of the request.
+     */
+    method: String;
+    /**
+     * True if the connection to the remote server uses SSL, false otherwise.
+     */
+    ssl: boolean;
+    /**
+     * Get a header value
+     * @param headerName The header name
+     * @returns The header value
+     * 
+     * @example <br><br>
+     * 
+     * ```javascript
+     * const header = request.getHeader("Custom-Header");
+     * console.log(header)
+     * ```
+     */
+    getHeader(headerName: String): String;
+    /**
+     * Override a header
+     * @param headerName The header name
+     * @param headerValue The header value
+     * 
+     * @example <br><br>
+     * 
+     * ```javascript
+     * request.setHeader("Custom-Header", "a_token");
+     * ```
+     */
+    setHeader(headerName: String, headerValue): void;
+}
 
+interface WakModel {
+    /**
+     * Event to customize REST requests to a remote 4D server on the fly.
+     * 
+     * @param request The request object
+     * 
+     * @warning  This is an enterprise feature <br><br>
+     * 
+     * You can customize requests by using `onSendRequest` in the remote model in the model.js file. The `onSendRequest` is called from all exiting requests.
+     * 
+     * @example <br><br>
+     * 
+     * ```javascript
+     * model.onSendRequest = function (request) {
+     *     // request properties:
+     *     request.url;
+     *     // raw url string
+     *     request.host;
+     *     request.port;
+     *     request.path;
+     *     request.query;
+     *     request.parameters;
+     *     request.method;
+     *     // request method string ("GET", "POST", "DELETE", ...)
+     *     request.ssl;
+     * 
+     *     // request headers getter and setter
+     *     request.getHeader("Custom-Header");
+     *     request.setHeader("Custom-Header", "a_token");
+     * };
+     * ```
+     */
+    onSendRequest(request: WakModelRequest): void;
+    /**
+     * Event to handle REST request timeouts to a remote 4D server.
+     * 
+     * @param request The request object
+     * 
+     * @warning  This is an enterprise feature <br><br>
+     */
+    onRequestTimeout(request: WakModelRequest): void;
+}
 	interface Module {
 		//TODO
 	}

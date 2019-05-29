@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DatastoreClass | </title>
+	<title>DatastoreClass |  </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title"></a>
+					<a href="../index.html" class="title"> </a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -129,7 +129,7 @@
 					<div class="tsd-signature tsd-kind-icon">attributes<span class="tsd-signature-symbol">:</span> <a href="attributeenumerator.html" class="tsd-signature-type">AttributeEnumerator</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L13">datastoreclass.d.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L13">datastoreclass.d.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -150,15 +150,14 @@
 					<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L23">datastoreclass.d.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L23">datastoreclass.d.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Number of entities in the datastore class</p>
 						</div>
-						<pre><code class="lang-javascript">ds.MyDataclass.length
-</code></pre>
+						<pre><code class="language-javascript">ds.MyDataclass.length</code></pre>
 					</div>
 				</section>
 			</section>
@@ -174,15 +173,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L33">datastoreclass.d.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L33">datastoreclass.d.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns an object of type EntityCollection containing all the entities in the datastore class</p>
 								</div>
-								<pre><code class="lang-javascript">ds.MyDataclass.all()
-</code></pre>
+								<pre><code class="language-javascript">ds.MyDataclass.all()</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="entitycollection.html" class="tsd-signature-type">EntityCollection</a></h4>
 						</li>
@@ -198,13 +196,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L43">datastoreclass.d.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L43">datastoreclass.d.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns the arithmetic average of all the non-null values of attribute for the datastore class or entity collection</p>
-									<h3 id="for-a-detailled-description-of-the-method-go-here-entitycollection-html-average-">For a detailled description of the method, <a href="entitycollection.html#average">go here</a></h3>
+									<h3 id="for-a-detailled-description-of-the-method-go-here">For a detailled description of the method, <a href="entitycollection.html#average">go here</a></h3>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -231,7 +229,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L69">datastoreclass.d.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L69">datastoreclass.d.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -242,9 +240,8 @@
 									<dt>warning</dt>
 									<dd><p>If you pass more than one attribute and enable the Distinct calculations, they will be valid only for the first attribute.</p>
 										<h4 id="example-1-compute-multi-attributes-with-distinct">Example 1 - Compute Multi Attributes with Distinct</h4>
-										<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> calculations = ds.Employee.compute(<span class="hljs-string">"age, salary"</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">//the Distinct operations will be performed only on the `age` attribute</span>
- <span class="hljs-keyword">var</span> stats = <span class="hljs-string">"Average age ="</span>+ calculations.age.averageDistinct+<span class="hljs-string">" Total salary ="</span>+calculations.salary.sum);
-</code></pre>
+										<pre><code class="language-javascript"> <span class="hljs-keyword">var</span> calculations = ds.Employee.compute(<span class="hljs-string">"age, salary"</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">//the Distinct operations will be performed only on the `age` attribute</span>
+ <span class="hljs-keyword">var</span> stats = <span class="hljs-string">"Average age ="</span>+ calculations.age.averageDistinct+<span class="hljs-string">" Total salary ="</span>+calculations.salary.sum);</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -265,20 +262,19 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
 							<p>Object containing the following calculations :</p>
-							<pre><code>-<span class="ruby"> average    Arithmetic average
-</span>-<span class="ruby"> averageDistinct    Average taking only distinct values into account
-</span>-<span class="ruby"> count    Number of values
-</span>-<span class="ruby"> countDistinct    Number of distinct values
-</span>-<span class="ruby"> max    Maximum value
-</span>-<span class="ruby"> min    Minimum value
-</span>-<span class="ruby"> sum    Sum
-</span>-<span class="ruby"> sumDistinct    Sum taking only distinct values into account</span>
-</code></pre>
+							<pre><code>- average    Arithmetic average
+- averageDistinct    Average taking only distinct <span class="hljs-keyword">values</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">account</span>
+- <span class="hljs-keyword">count</span>    <span class="hljs-built_in">Number</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">values</span>
+- countDistinct    <span class="hljs-built_in">Number</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">distinct</span> <span class="hljs-keyword">values</span>
+- <span class="hljs-keyword">max</span>    Maximum <span class="hljs-keyword">value</span>
+- <span class="hljs-keyword">min</span>    <span class="hljs-keyword">Minimum</span> <span class="hljs-keyword">value</span>
+- <span class="hljs-keyword">sum</span>    <span class="hljs-keyword">Sum</span>
+- sumDistinct    <span class="hljs-keyword">Sum</span> taking <span class="hljs-keyword">only</span> <span class="hljs-keyword">distinct</span> <span class="hljs-keyword">values</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">account</span></code></pre>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L83">datastoreclass.d.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L83">datastoreclass.d.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -304,11 +300,10 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
 							<p>Object containing all the calculations performed and subtotals</p>
 							<h4 id="example-1-compute-with-groupby">Example 1 - Compute with groupBy</h4>
-							<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> stats = ds.Sales.all().compute(<span class="hljs-string">"benefit, revenues"</span>, <span class="hljs-string">"country, month"</span>);
+							<pre><code class="language-javascript"> <span class="hljs-keyword">var</span> stats = ds.Sales.all().compute(<span class="hljs-string">"benefit, revenues"</span>, <span class="hljs-string">"country, month"</span>);
 <span class="hljs-comment">// compute `benefit`and `revenues` values of a Sales class grouped by country and month</span>
 <span class="hljs-comment">// for more convenience the returned object can be converted into an array</span>
-stats.toArray();
-</code></pre>
+stats.toArray();</code></pre>
 						</li>
 					</ul>
 				</section>
@@ -322,7 +317,7 @@ stats.toArray();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L105">datastoreclass.d.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L105">datastoreclass.d.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -333,11 +328,9 @@ stats.toArray();
 									<dt>warning</dt>
 									<dd><p><code>distinct</code> parameter is ignored if you do not pass the <code>attribute</code> parameter</p>
 										<h4 id="example-1">Example 1</h4>
-										<pre><code class="lang-javascript">ds.DataClass1.query(<span class="hljs-string">'name &gt; 1*'</span>).count(<span class="hljs-string">'name2'</span>, <span class="hljs-literal">true</span>)
-</code></pre>
+										<pre><code class="language-javascript">ds.DataClass1.query(<span class="hljs-string">'name &gt; 1*'</span>).count(<span class="hljs-string">'name2'</span>, <span class="hljs-literal">true</span>)</code></pre>
 										<h4 id="example-2-count-on-object-attribute">Example 2 - Count on object attribute</h4>
-										<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> vCount = ds.MyClass.all().count(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">// `objectAtt` is an object attribute with a `prop` property</span>
-</code></pre>
+										<pre><code class="language-javascript"><span class="hljs-keyword">var</span> vCount = ds.MyClass.all().count(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">// `objectAtt` is an object attribute with a `prop` property</span></code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -371,7 +364,7 @@ stats.toArray();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L135">datastoreclass.d.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L135">datastoreclass.d.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -383,14 +376,13 @@ stats.toArray();
 									<dd><p>The object is created in memory and is not saved in the datastore until the save( ) method is called.
 										If the object is deleted before being saved, it cannot be recovered.</p>
 										<h4 id="example-create-then-save-">Example (create then save)</h4>
-										<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> newCompany = ds.Company.createEntity() ;
+										<pre><code class="language-javascript"><span class="hljs-keyword">var</span> newCompany = ds.Company.createEntity() ;
 a.name = <span class="hljs-string">'Wakanda'</span>;
 a.city = <span class="hljs-string">'Paris'</span> ;
-a.save() ;
-</code></pre>
+a.save() ;</code></pre>
 										<h3 id="note">Note</h3>
 										<p>Another useful alternative way to create entities (then save) is to use the <code>new</code> syntax
-											```javascript
+											<code>`</code>javascript
 											new ds.Company({
 											name : &#39;Wakanda&#39; ,
 											city : &#39;Paris&#39;
@@ -412,7 +404,7 @@ a.save() ;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L167">datastoreclass.d.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L167">datastoreclass.d.ts:167</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,7 +415,7 @@ a.save() ;
 									<dt>warning</dt>
 									<dd><p>= <strong>createEntityCollection</strong> do work only with Wakanda built-in DB. It does not work with MySQL / ODBC Connectors*</p>
 										<h4 id="example-1">Example 1</h4>
-										<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> all = ds.Person.all(); <span class="hljs-comment">// get all the entities</span>
+										<pre><code class="language-javascript"><span class="hljs-keyword">var</span> all = ds.Person.all(); <span class="hljs-comment">// get all the entities</span>
 <span class="hljs-keyword">var</span> coll1 = ds.Person.createEntityCollection(); <span class="hljs-comment">// create an empty unsorted entity collection</span>
 coll1.add( all[<span class="hljs-number">10</span>]); <span class="hljs-comment">//add some entities, one of them 3 times</span>
 coll1.add( all[<span class="hljs-number">9</span>]);
@@ -431,8 +423,7 @@ coll1.add( all[<span class="hljs-number">8</span>]);
 coll1.add( all[<span class="hljs-number">7</span>]);
 coll1.add( all[<span class="hljs-number">8</span>]);
 coll1.add( all[<span class="hljs-number">8</span>]);
-coll1; <span class="hljs-comment">// displays the collection</span>
-</code></pre>
+coll1; <span class="hljs-comment">// displays the collection</span></code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -461,7 +452,7 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L194">datastoreclass.d.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L194">datastoreclass.d.ts:194</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -481,18 +472,16 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
 							<p>Array containing the list of distinct values</p>
 							<h4 id="example-1">Example 1</h4>
-							<pre><code class="lang-javascript"><span class="hljs-comment">//In our example, we want to return the total number of different jobs in the same company:</span>
+							<pre><code class="language-javascript"><span class="hljs-comment">//In our example, we want to return the total number of different jobs in the same company:</span>
 
 <span class="hljs-keyword">var</span> employer = ds.Company.find( <span class="hljs-string">"name == :1"</span>, <span class="hljs-string">"WAKANDA"</span> ) ;  <span class="hljs-comment">// find the company by its name</span>
 <span class="hljs-keyword">var</span> allEmp = ds.Employee.query(<span class="hljs-string">"comp == :1"</span>, employer); <span class="hljs-comment">// create an entity collection containing all the employees in a company</span>
 <span class="hljs-comment">// 'comp' is a relation attribute in Employee</span>
- <span class="hljs-keyword">var</span> jobNb = allEmp.distinctValues(<span class="hljs-string">"jobName"</span>).length; <span class="hljs-comment">//`jobName` is a DatastoreClassAttribute of Employee</span>
-</code></pre>
+ <span class="hljs-keyword">var</span> jobNb = allEmp.distinctValues(<span class="hljs-string">"jobName"</span>).length; <span class="hljs-comment">//`jobName` is a DatastoreClassAttribute of Employee</span></code></pre>
 							<h4 id="example-2-distinctvalues-with-object-attributes-">Example 2 - distinctValues with Object Attributes.</h4>
-							<pre><code class="lang-javascript"><span class="hljs-comment">// In a "keywords" object attribute of an Article datastore class, you store the page numbers for each keyword in a "pages" array.</span>
+							<pre><code class="language-javascript"><span class="hljs-comment">// In a "keywords" object attribute of an Article datastore class, you store the page numbers for each keyword in a "pages" array.</span>
 <span class="hljs-comment">// You want to know all pages that contain at least one keyword</span>
- <span class="hljs-keyword">var</span> arr = ds.Article.all().distinctValues(<span class="hljs-string">"keywords.pages[]"</span>);
-</code></pre>
+ <span class="hljs-keyword">var</span> arr = ds.Article.all().distinctValues(<span class="hljs-string">"keywords.pages[]"</span>);</code></pre>
 						</li>
 					</ul>
 				</section>
@@ -506,17 +495,16 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L227">datastoreclass.d.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L227">datastoreclass.d.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>exports all the entities stored in the object for which it is called in JSON format
 									It can be called for a :</p>
-									<pre><code>-<span class="ruby"> datastore
-</span>-<span class="ruby"> DatastoreClass
-</span>-<span class="ruby"> EntityCollection</span>
-</code></pre>
+									<pre><code><span class="hljs-bullet">- </span>datastore
+<span class="hljs-bullet">- </span>DatastoreClass
+<span class="hljs-bullet">- </span>EntityCollection</code></pre>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>warning</dt>
@@ -526,13 +514,12 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 											<li>extended datastore classes are not exported,</li>
 											<li>related or alias attributes are not exported directly -- only primary keys values are exported,</li>
 											<li>data from outside catalogs or datastores are not exported<h4 id="example-">Example :</h4>
-												<pre><code class="lang-javascript">myFolder = <span class="hljs-keyword">new</span> Folder(<span class="hljs-string">"C:/ExportCollectionJSON/"</span>);     <span class="hljs-comment">// get a reference to the export folder</span>
+												<pre><code class="language-javascript">myFolder = <span class="hljs-keyword">new</span> Folder(<span class="hljs-string">"C:/ExportCollectionJSON/"</span>);     <span class="hljs-comment">// get a reference to the export folder</span>
 <span class="hljs-keyword">if</span> (myFolder.exists)     <span class="hljs-comment">// if the folder actually exists</span>
 {
   <span class="hljs-keyword">var</span> coll=ds.Employee.query(<span class="hljs-string">"lastName = :1"</span>, <span class="hljs-string">"P*"</span>);
   coll.exportAsJSON( myFolder ) ;     <span class="hljs-comment">// export the collection</span>
-  }
-</code></pre>
+  }</code></pre>
 											For more details, go here : <a href="http://doc.wakanda.org/home2.en.html%23/Datastore/Entity-Collection/length.303-638616.en.html#/Datastore/Entity-Collection/exportAsJSON.301-1041820.en.html">http://doc.wakanda.org/home2.en.html%23/Datastore/Entity-Collection/length.303-638616.en.html#/Datastore/Entity-Collection/exportAsJSON.301-1041820.en.html</a></li>
 										</ul>
 									</dd>
@@ -579,17 +566,16 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L259">datastoreclass.d.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L259">datastoreclass.d.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>exports all the entities stored the object for which it is called in SQL format
 									It can be called for a :</p>
-									<pre><code>-<span class="ruby"> datastore
-</span>-<span class="ruby"> DatastoreClass
-</span>-<span class="ruby"> EntityCollection</span>
-</code></pre>
+									<pre><code><span class="hljs-bullet">- </span>datastore
+<span class="hljs-bullet">- </span>DatastoreClass
+<span class="hljs-bullet">- </span>EntityCollection</code></pre>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>warning</dt>
@@ -599,12 +585,11 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 											<li>extended datastore classes are not exported,</li>
 											<li>related or alias attributes are not exported directly -- only primary keys values are exported,</li>
 											<li>data from outside catalogs or datastores are not exported<h4 id="example">Example</h4>
-												<pre><code class="lang-javascript">  myFolder = <span class="hljs-keyword">new</span> Folder(<span class="hljs-string">"C:/ExportCollection/"</span>);     <span class="hljs-comment">// get a reference to the export folder</span>
+												<pre><code class="language-javascript">  myFolder = <span class="hljs-keyword">new</span> Folder(<span class="hljs-string">"C:/ExportCollection/"</span>);     <span class="hljs-comment">// get a reference to the export folder</span>
   <span class="hljs-keyword">if</span> (myFolder.exists)     <span class="hljs-comment">// if the folder actually exists</span>
   {
   <span class="hljs-keyword">var</span> coll=ds.Employee.query(<span class="hljs-string">"lastName = :1"</span>, <span class="hljs-string">"P*"</span>);
-  coll.exportAsSQL( myFolder ) ;     <span class="hljs-comment">// export the collection</span>
-</code></pre>
+  coll.exportAsSQL( myFolder ) ;     <span class="hljs-comment">// export the collection</span></code></pre>
 											For more details go here : <a href="http://doc.wakanda.org/home2.en.html%23/Datastore/Entity-Collection/length.303-638616.en.html#/Datastore/Entity-Collection/exportAsSQL.301-1041494.en.html">http://doc.wakanda.org/home2.en.html%23/Datastore/Entity-Collection/length.303-638616.en.html#/Datastore/Entity-Collection/exportAsSQL.301-1041494.en.html</a></li>
 										</ul>
 									</dd>
@@ -651,7 +636,7 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L291">datastoreclass.d.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L291">datastoreclass.d.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -661,11 +646,9 @@ coll1; <span class="hljs-comment">// displays the collection</span>
 									<p><code>The find( ) method is equivalent to executing a query( ) followed by retrieving the first entity:
 For more details and exemples check the Query method section</code></p>
 									<h4 id="example1-with-querystring-syntax">Example1 : With QueryString syntax</h4>
-									<pre><code class="lang-javascript">ds.Employee.find( <span class="hljs-string">"name == DOE"</span>);
-</code></pre>
+									<pre><code class="language-javascript">ds.Employee.find( <span class="hljs-string">"name == DOE"</span>);</code></pre>
 									<h4 id="example2-with-placeholders-syntax">Example2 :  With placeholders syntax</h4>
-									<pre><code class="lang-javascript">ds.Employee.find( <span class="hljs-string">'name ==:1'</span>, <span class="hljs-string">"DOE"</span>);
-</code></pre>
+									<pre><code class="language-javascript">ds.Employee.find( <span class="hljs-string">'name ==:1'</span>, <span class="hljs-string">"DOE"</span>);</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -698,16 +681,15 @@ For more details and exemples check the Query method section</code></p>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L304">datastoreclass.d.ts:304</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L304">datastoreclass.d.ts:304</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns the entity in the first position of the entity collection or datastore class</p>
 									<h4 id="example">Example</h4>
-									<pre><code class="lang-javascript">ds.Employee.query(<span class="hljs-string">'ID &gt; 2'</span>).first()  <span class="hljs-comment">//exemple1</span>
-ds.Company.first()  <span class="hljs-comment">//exemple2</span>
-</code></pre>
+									<pre><code class="language-javascript">ds.Employee.query(<span class="hljs-string">'ID &gt; 2'</span>).first()  <span class="hljs-comment">//exemple1</span>
+ds.Company.first()  <span class="hljs-comment">//exemple2</span></code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="entity.html" class="tsd-signature-type">Entity</a></h4>
@@ -724,7 +706,7 @@ ds.Company.first()  <span class="hljs-comment">//exemple2</span>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L331">datastoreclass.d.ts:331</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L331">datastoreclass.d.ts:331</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -736,14 +718,13 @@ ds.Company.first()  <span class="hljs-comment">//exemple2</span>
 									<dd><p>The forEach( ) method includes an optimized mechanism that triggers the entity to be saved automatically if it has been modified, and not saved when it hasn&#39;t.
 										You can however call the save( ) method anyway to manage any errors in a try/catch structure.  (In this case the call is detected by Wakanda and the entity is not saved a second time)</p>
 										<h4 id="example">Example</h4>
-										<pre><code class="lang-javascript"> <span class="hljs-comment">// We want to give a 5% raise to all employees with a salary less than 5,000.</span>
+										<pre><code class="language-javascript"> <span class="hljs-comment">// We want to give a 5% raise to all employees with a salary less than 5,000.</span>
 mySet = ds.Employee.query(<span class="hljs-string">'salary &lt; 5000'</span>) ;
 mySet.forEach(
 <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> emp </span>) </span>{
 emp.salary *= <span class="hljs-number">1.05</span>;
 <span class="hljs-comment">// unnecessary to save modification forEach does it automatically when needed</span>
-});
-</code></pre>
+});</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -753,12 +734,12 @@ emp.salary *= <span class="hljs-number">1.05</span>;
 									<h5>callbackFn: <span class="tsd-signature-type">Function</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Function Handler function to invoke for each entity in the collection
-											<code>`
-The callbackFn function accepts two parameters: function (</code>thisArg<code>,</code>iterator`)</p>
+											<code></code>
+										The callbackFn function accepts two parameters: function (<code>thisArg</code>, <code>iterator</code>)</p>
 										<ul>
 											<li>The first parameter, <code>thisArg</code>, represents the entity currently being processed. When it is executed, the function receives in this parameter the entity on which it iterates (the parameter is used like the keyword <code>this</code>). You can then perform any type of operation on the values of the entity.</li>
 											<li>The second (optional) parameter, <code>iterator</code>, is the iterator. When it is executed, the function receives in this parameter the position of the element currently being processed in the entity collection. You can use it, for example, to display a counter.
-											``</li>
+											<code></code></li>
 										</ul>
 									</div>
 								</li>
@@ -777,7 +758,7 @@ The callbackFn function accepts two parameters: function (</code>thisArg<code>,<
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L358">datastoreclass.d.ts:358</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L358">datastoreclass.d.ts:358</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -793,13 +774,12 @@ The callbackFn function accepts two parameters: function (</code>thisArg<code>,<
 											<li>You can modify an existing entity by adding the __KEY  and STAMP attributes and their respective values in arrayValues</li>
 										</ul>
 										<h4 id="example">Example</h4>
-										<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> arrAdd = []     <span class="hljs-comment">// Create an empty array</span>
+										<pre><code class="language-javascript"><span class="hljs-keyword">var</span> arrAdd = []     <span class="hljs-comment">// Create an empty array</span>
 arrAdd[<span class="hljs-number">0</span>] = {<span class="hljs-attr">lastName</span>: <span class="hljs-string">"Potter"</span>, <span class="hljs-attr">firstName</span>: <span class="hljs-string">"Harold"</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">3200</span>};
 arrAdd[<span class="hljs-number">1</span>] = {<span class="hljs-attr">lastName</span>: <span class="hljs-string">"Luke"</span>, <span class="hljs-attr">firstName</span>: <span class="hljs-string">"Lucy"</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">5300</span>, <span class="hljs-attr">married</span>: <span class="hljs-literal">true</span>}; <span class="hljs-comment">// 'married' is ignored if the attribute does not exist in the datastore class</span>
 arrAdd[<span class="hljs-number">2</span>] = {<span class="hljs-attr">lastName</span>: <span class="hljs-string">"Blue"</span>, <span class="hljs-attr">firstName</span>: <span class="hljs-string">"George"</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">3200</span>};
 <span class="hljs-keyword">var</span> newColl = ds.Employees.fromArray(arrAdd);     <span class="hljs-comment">// entities are created and saved</span>
-newColl;
-</code></pre>
+newColl;</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -824,7 +804,7 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L581">datastoreclass.d.ts:581</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L581">datastoreclass.d.ts:581</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -835,8 +815,7 @@ newColl;
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Number</span></h4>
 							<p>Dataclass page size.</p>
 							<h4 id="example">Example</h4>
-							<pre><code class="lang-javascript">myRemoteDatastore.Employees.getCollectionPageLength();
-</code></pre>
+							<pre><code class="language-javascript">myRemoteDatastore.Employees.getCollectionPageLength();</code></pre>
 						</li>
 					</ul>
 				</section>
@@ -850,7 +829,7 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L376">datastoreclass.d.ts:376</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L376">datastoreclass.d.ts:376</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -875,14 +854,13 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L387">datastoreclass.d.ts:387</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L387">datastoreclass.d.ts:387</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns the name of the datastore class to which it is applied in a string</p>
-									<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nameEM = ds.Book.getName();
-</code></pre>
+									<pre><code class="language-javascript"><span class="hljs-keyword">var</span> nameEM = ds.Book.getName();</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">String</span></h4>
@@ -899,15 +877,14 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L400">datastoreclass.d.ts:400</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L400">datastoreclass.d.ts:400</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns the current scope property value of the datastore class
 									Two values can be returned for a datastore class: (default value <code>public</code>)</p>
-									<pre><code>- <span class="hljs-string">"public"</span>: a public datastore class can be accessed <span class="hljs-keyword">from</span> anywhere (including on the<span class="hljs-built_in"> client </span>side)
-</code></pre><ul>
+									<pre><code>- <span class="hljs-string">"public"</span>: a <span class="hljs-keyword">public</span> datastore <span class="hljs-keyword">class</span> <span class="hljs-symbol">can</span> <span class="hljs-symbol">be</span> <span class="hljs-symbol">accessed</span> <span class="hljs-symbol">from</span> <span class="hljs-symbol">anywhere</span> (<span class="hljs-symbol">including</span> <span class="hljs-symbol">on</span> <span class="hljs-symbol">the</span> <span class="hljs-symbol">client</span> <span class="hljs-symbol">side</span>)</code></pre><ul>
 										<li>&quot;public on server&quot;: a public on server datastore class can only be accessed on the server</li>
 									</ul>
 								</div>
@@ -927,7 +904,7 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L428">datastoreclass.d.ts:428</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L428">datastoreclass.d.ts:428</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -935,21 +912,19 @@ newColl;
 									<p>imports all the entities stored in JSON format from the file(s) located in the importFolder folder</p>
 								</div>
 								<p>The importFromJSON( ) method can be called for a:</p>
-								<pre><code>-<span class="ruby"> <span class="hljs-symbol">Datastore:</span> entities from all the datastore classes are imported,
-</span>-<span class="ruby"> <span class="hljs-symbol">DatastoreClass:</span> entities from the datastore <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">are</span> <span class="hljs-title">imported</span>.</span></span>
-</code></pre><h4 id="note">Note</h4>
+								<pre><code>- Datastore: entities <span class="hljs-keyword">from</span> all the datastore classes are imported,
+- DatastoreClass: entities <span class="hljs-keyword">from</span> the datastore <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">are</span> <span class="hljs-title">imported</span>.</span></code></pre><h4 id="note">Note</h4>
 								<p>This method only work with the Wakanda Built-in database (MYSQL and other Connectors are not concerned)</p>
 								<dl class="tsd-comment-tags">
 									<dt>warning</dt>
 									<dd><p>:</p>
-										<pre><code class="lang-`text">    - This folder must contain UTF-8 text files into which each entity is described through a single JSON object
+										<pre><code class="language-`text">    - This folder must contain UTF-8 text files into which each entity is described through a single JSON object
     - calculated attributes cannot be imported directly -- only their underlying attributes are imported,
     - extended datastore class entities cannot be imported,
     - related or alias attributes are not imported directly -- only primary keys values are exported,
     - you cannot import data from outside catalogs or datastores.
 
- You can refer to the [exportAsJson method description] (entitycollection.html#exportasjson) for more information about exporting/importing
-</code></pre>
+ You can refer to the [exportAsJson method description] (entitycollection.html#exportasjson) for more information about exporting/importing</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -973,7 +948,7 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L448">datastoreclass.d.ts:448</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L448">datastoreclass.d.ts:448</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -993,13 +968,11 @@ newColl;
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Number</span></h4>
 							<p>Number Highest value of attribute</p>
 							<h4 id="example-1">Example 1</h4>
-							<pre><code class="lang-javascript"><span class="hljs-comment">//We want to find the highest salary among all the female employees:</span>
+							<pre><code class="language-javascript"><span class="hljs-comment">//We want to find the highest salary among all the female employees:</span>
 <span class="hljs-keyword">var</span> fColl = ds.Employee.query(<span class="hljs-string">"gender == :1"</span>,<span class="hljs-string">"female"</span>);
-<span class="hljs-keyword">var</span> maxFSalary = fColl.max(<span class="hljs-string">"salary"</span>);
-</code></pre>
+<span class="hljs-keyword">var</span> maxFSalary = fColl.max(<span class="hljs-string">"salary"</span>);</code></pre>
 							<h4 id="example-2-max-with-object-attributes">Example 2 - Max with object attributes</h4>
-							<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> value = ds.MyClass.all().max(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">//Highest of all prop attribute values</span>
-</code></pre>
+							<pre><code class="language-javascript"><span class="hljs-keyword">var</span> value = ds.MyClass.all().max(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">//Highest of all prop attribute values</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -1013,7 +986,7 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L470">datastoreclass.d.ts:470</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L470">datastoreclass.d.ts:470</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1033,13 +1006,11 @@ newColl;
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Number</span></h4>
 							<p>Number Lowest value of attribute</p>
 							<h4 id="example-1">Example 1</h4>
-							<pre><code class="lang-javascript"><span class="hljs-comment">//We want to find the lowest salary among all the female employees:</span>
+							<pre><code class="language-javascript"><span class="hljs-comment">//We want to find the lowest salary among all the female employees:</span>
 <span class="hljs-keyword">var</span> fColl = ds.Employee.query(<span class="hljs-string">"gender == :1"</span>,<span class="hljs-string">"female"</span>);
-<span class="hljs-keyword">var</span> maxFSalary = fColl.min(<span class="hljs-string">"salary"</span>);
-</code></pre>
+<span class="hljs-keyword">var</span> maxFSalary = fColl.min(<span class="hljs-string">"salary"</span>);</code></pre>
 							<h4 id="example-2-min-with-object-attributes">Example 2 - Min with object attributes</h4>
-							<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> value = ds.MyClass.all().min(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">//Lowest of all prop attribute values</span>
-</code></pre>
+							<pre><code class="language-javascript"><span class="hljs-keyword">var</span> value = ds.MyClass.all().min(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">//Lowest of all prop attribute values</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -1053,7 +1024,7 @@ newColl;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L497">datastoreclass.d.ts:497</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L497">datastoreclass.d.ts:497</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1064,18 +1035,15 @@ newColl;
 									<dt>info</dt>
 									<dd><p>You can pass from 1 to x attributes separated by commas</p>
 										<h4 id="example1-orderby-with-mutliple-attributes">Example1 orderBy with Mutliple Attributes</h4>
-										<pre><code class="lang-javascript"> <span class="hljs-comment">// This example performs a simple search and returns an entity collection that has been sorted on two attributes, the first in descending order</span>
+										<pre><code class="language-javascript"> <span class="hljs-comment">// This example performs a simple search and returns an entity collection that has been sorted on two attributes, the first in descending order</span>
  <span class="hljs-keyword">var</span> mySet = ds.People.query(<span class="hljs-string">"salary &gt; 10000"</span>);
- <span class="hljs-keyword">var</span> mySet2 = mySet.orderBy(<span class="hljs-string">"salary desc,city"</span>);
-</code></pre>
+ <span class="hljs-keyword">var</span> mySet2 = mySet.orderBy(<span class="hljs-string">"salary desc,city"</span>);</code></pre>
 										<h4 id="example2-orberby-with-a-relation-attribute">Example2 orberBy with a relation attribute</h4>
-										<pre><code class="lang-javascript"><span class="hljs-comment">// This example sorts employees with a salary greater than 10,000 by the city where their company is located, using a relation attribute</span>
+										<pre><code class="language-javascript"><span class="hljs-comment">// This example sorts employees with a salary greater than 10,000 by the city where their company is located, using a relation attribute</span>
 <span class="hljs-keyword">var</span> mySet = ds.People.query(<span class="hljs-string">"salary &gt; 10000"</span>);
-mySet = mySet.orderBy(ds.People.employer.city); <span class="hljs-comment">// `employer` is a relation attribute</span>
-</code></pre>
+mySet = mySet.orderBy(ds.People.employer.city); <span class="hljs-comment">// `employer` is a relation attribute</span></code></pre>
 										<h4 id="example3-orberby-with-object-attributes">Example3 orberBy with object attributes</h4>
-										<pre><code class="lang-javascript">ds.MyClass.all().orderBy(<span class="hljs-string">"objectAtt.prop desc"</span>)
-</code></pre>
+										<pre><code class="language-javascript">ds.MyClass.all().orderBy(<span class="hljs-string">"objectAtt.prop desc"</span>)</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -1108,7 +1076,7 @@ mySet = mySet.orderBy(ds.People.employer.city); <span class="hljs-comment">// `e
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L509">datastoreclass.d.ts:509</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L509">datastoreclass.d.ts:509</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1141,7 +1109,7 @@ mySet = mySet.orderBy(ds.People.employer.city); <span class="hljs-comment">// `e
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L543">datastoreclass.d.ts:543</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L543">datastoreclass.d.ts:543</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1153,20 +1121,16 @@ mySet = mySet.orderBy(ds.People.employer.city); <span class="hljs-comment">// `e
 									</ul>
 								</div>
 								<h4 id="examples">Examples</h4>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Applied to a Dataclass</span>
-ds.Dataclass1.remove();
-</code></pre>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Applied to a collection</span>
- ds.Dataclass1.query(<span class="hljs-string">'ID &gt; 3 &amp; ID &lt; 5'</span>).remove();
-</code></pre>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Applied to an entity</span>
-ds.Dataclass1.first().remove();
-</code></pre>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Applied at the Model level (Entity method on the Customer dataclass)</span>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Applied to a Dataclass</span>
+ds.Dataclass1.remove();</code></pre>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Applied to a collection</span>
+ ds.Dataclass1.query(<span class="hljs-string">'ID &gt; 3 &amp; ID &lt; 5'</span>).remove();</code></pre>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Applied to an entity</span>
+ds.Dataclass1.first().remove();</code></pre>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Applied at the Model level (Entity method on the Customer dataclass)</span>
 model.Customer.entityMethods.remove = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 <span class="hljs-keyword">this</span>.remove();
-};
-</code></pre>
+};</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1182,7 +1146,7 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L558">datastoreclass.d.ts:558</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L558">datastoreclass.d.ts:558</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1215,7 +1179,7 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L571">datastoreclass.d.ts:571</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L571">datastoreclass.d.ts:571</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1235,8 +1199,7 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 									<div class="tsd-comment tsd-typography">
 										<p>Number of entities return by each query</p>
 										<h4 id="example">Example</h4>
-										<pre><code class="lang-javascript">myRemoteDatastore.Employees.setCollectionPageLength(<span class="hljs-number">80</span>);
-</code></pre>
+										<pre><code class="language-javascript">myRemoteDatastore.Employees.setCollectionPageLength(<span class="hljs-number">80</span>);</code></pre>
 									</div>
 								</li>
 							</ul>
@@ -1254,7 +1217,7 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L599">datastoreclass.d.ts:599</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L599">datastoreclass.d.ts:599</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1272,11 +1235,9 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 									<div class="tsd-comment tsd-typography">
 										<p><code>false</code> by Default Use only entities that have different values</p>
 										<h4 id="example-1">Example 1</h4>
-										<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> highSalaries = ds.Employees.query(<span class="hljs-string">"salary &gt; 30000"</span>).sum(<span class="hljs-string">"salary"</span> , <span class="hljs-literal">true</span>);
-</code></pre>
+										<pre><code class="language-javascript"> <span class="hljs-keyword">var</span> highSalaries = ds.Employees.query(<span class="hljs-string">"salary &gt; 30000"</span>).sum(<span class="hljs-string">"salary"</span> , <span class="hljs-literal">true</span>);</code></pre>
 										<h4 id="example2-with-object-attributes">Example2 With Object attributes</h4>
-										<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> propSum = ds.MyClass.all().sum(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">//sum of all prop attribute values</span>
-</code></pre>
+										<pre><code class="language-javascript"><span class="hljs-keyword">var</span> propSum = ds.MyClass.all().sum(<span class="hljs-string">"objectAtt.prop"</span>) <span class="hljs-comment">//sum of all prop attribute values</span></code></pre>
 									</div>
 								</li>
 							</ul>
@@ -1294,7 +1255,7 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L647">datastoreclass.d.ts:647</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L647">datastoreclass.d.ts:647</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1341,28 +1302,31 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 							<p>You can of course navigate through dataclasses via relation attributes.
 							In this scenario you can even limit the number of related entities fetched by passing <code>RelatedAttribure: N</code> (where N represents the number of sub elements)</p>
 							<h4 id="examples">EXAMPLES</h4>
-							<p> <details> <summary> Click to Expand </summary></p>
-							<h3 id="simple-case">Simple case</h3>
-							<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myArray = ds.Employee.toArray(<span class="hljs-string">"firstName,lastName,salary"</span>);
-<span class="hljs-comment">// myArray[0] contains {firstName: 'John', lastName: 'Smith', salary: 5000}</span>
-</code></pre>
-							<h3 id="to-get-all-the-attributes-from-a-collection">To get all the attributes from a collection</h3>
-							<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> myColl = ds.Employee.query(<span class="hljs-string">"salary &gt;= 6000 order by salary asc"</span>);
- <span class="hljs-keyword">var</span> myArray = myColl.toArray(<span class="hljs-string">""</span>);     <span class="hljs-comment">// return all attributes</span>
-</code></pre>
-							<h3 id="example-with-relations-and-options-key-skip-top-">Example with relations and options (key, skip , top)</h3>
-							<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> myArray = ds.Employee.toArray(<span class="hljs-string">"name, employer.name, employer.location"</span>, <span class="hljs-literal">true</span>, <span class="hljs-number">0</span> , <span class="hljs-number">1</span>)  <span class="hljs-comment">// employer is a relation attribute related to another dataclass</span>
-<span class="hljs-comment">// myArray[0] contains { __KEY: '0', __STAMP: 2,name: 'Smith', employer: {name: 'ACME', location: 'Memphis'}}</span>
-</code></pre>
-							<h3 id="example-with-sort-and-sub-filtered-relations-three-levels-">Example with Sort, and Sub filtered Relations (three levels)</h3>
-							<pre><code class="lang-javascript">
-<span class="hljs-comment">// - Retrieve the first five students.</span>
-<span class="hljs-comment">// - Limit the number of courses per student to five.</span>
-<span class="hljs-comment">// - Sort arrays by the student's first name and sort course sub-arrays by subject name. Both in ascending order.</span>
-<span class="hljs-comment">// - skip the 1st result</span>
- <span class="hljs-keyword">var</span> sel = ds.Student.all();
- <span class="hljs-keyword">var</span> myArray = sel.toArray(<span class="hljs-string">"fullName, Course:5, Course.matter, Course.teacher.fullName"</span>, <span class="hljs-string">"firstName, Course.matter"</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>);
-</code></pre>
+							<details> <summary> Click to Expand </summary>
+								### Simple case
+								```javascript
+								var myArray = ds.Employee.toArray("firstName,lastName,salary");
+								// myArray[0] contains {firstName: 'John', lastName: 'Smith', salary: 5000}
+								```
+								### To get all the attributes from a collection
+								```javascript
+								var myColl = ds.Employee.query("salary >= 6000 order by salary asc");
+								var myArray = myColl.toArray("");     // return all attributes
+								```
+								### Example with relations and options (key, skip , top)
+								```javascript
+								var myArray = ds.Employee.toArray("name, employer.name, employer.location", true, 0 , 1)  // employer is a relation attribute related to another dataclass
+								// myArray[0] contains { __KEY: '0', __STAMP: 2,name: 'Smith', employer: {name: 'ACME', location: 'Memphis'}}
+								```
+								### Example with Sort, and Sub filtered Relations (three levels)
+								```javascript
+								<p>// - Retrieve the first five students.
+									// - Limit the number of courses per student to five.
+									// - Sort arrays by the student&#39;s first name and sort course sub-arrays by subject name. Both in ascending order.
+									// - skip the 1st result
+									var sel = ds.Student.all();
+									var myArray = sel.toArray(&quot;fullName, Course:5, Course.matter, Course.teacher.fullName&quot;, &quot;firstName, Course.matter&quot;, 1, 5);
+								<code>`</code></p>
 						</li>
 					</ul>
 				</section>
@@ -1376,16 +1340,15 @@ model.Customer.entityMethods.remove = <span class="hljs-function"><span class="h
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreclass.d.ts#L662">datastoreclass.d.ts:662</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreclass.d.ts#L662">datastoreclass.d.ts:662</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns a string representation of the entity or entity collection</p>
 									<h4 id="example">Example</h4>
-									<pre><code>ds<span class="hljs-selector-class">.Dataclass1</span><span class="hljs-selector-class">.query</span>(<span class="hljs-string">'ID &gt; 3'</span>).toString()  <span class="hljs-comment">// applied to a collection</span>
-ds<span class="hljs-selector-class">.Dataclass1</span><span class="hljs-selector-class">.first</span>().toString() <span class="hljs-comment">// applied to an entity</span>
-</code></pre>
+									<pre><code>ds.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Dataclass1</span>.</span></span>query('ID &gt; <span class="hljs-number">3</span>').<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span>  <span class="hljs-comment">// applied to a collection</span>
+ds.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Dataclass1</span>.</span></span>first<span class="hljs-literal">()</span>.<span class="hljs-keyword">to</span><span class="hljs-constructor">String()</span> <span class="hljs-comment">// applied to an entity</span></code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">String</span></h4>

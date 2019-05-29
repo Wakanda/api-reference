@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WAKSharedWorkerProxy | </title>
+	<title>WAKSharedWorkerProxy |  </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title"></a>
+					<a href="../index.html" class="title"> </a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -95,20 +95,19 @@
 					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <a href="port.html" class="tsd-signature-type">Port</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/sharedworker.d.ts#L142">sharedworker.d.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/sharedworker.d.ts#L142">sharedworker.d.ts:142</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Use the proxy port to communicate with the share worker thread.</p>
 						</div>
-						<pre><code class="lang-javascript"><span class="hljs-comment">// Create a new SharedWorker and get the proxy worker</span>
+						<pre><code class="language-javascript"><span class="hljs-comment">// Create a new SharedWorker and get the proxy worker</span>
 <span class="hljs-keyword">var</span> myWorkerProxy = <span class="hljs-keyword">new</span> SharedWorker( <span class="hljs-string">'backend/worker.js'</span>, <span class="hljs-string">'my-worker-name'</span> );
 <span class="hljs-comment">// Get the proxy worker port for communication</span>
 <span class="hljs-keyword">var</span> workerProxyPort = myWorkerProxy.port;
 <span class="hljs-comment">// Send a "wake up" message to the worker</span>
-workerProxyPort.postMessage( <span class="hljs-string">'wake-up'</span> );
-</code></pre>
+workerProxyPort.postMessage( <span class="hljs-string">'wake-up'</span> );</code></pre>
 					</div>
 				</section>
 			</section>

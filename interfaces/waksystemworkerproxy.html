@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WAKSystemWorkerProxy | </title>
+	<title>WAKSystemWorkerProxy |  </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title"></a>
+					<a href="../index.html" class="title"> </a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -108,18 +108,17 @@
 					<div class="tsd-signature tsd-kind-icon">onerror<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L304">systemworker.d.ts:304</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L304">systemworker.d.ts:304</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Callback for system worker errors.</p>
 						</div>
-						<pre><code class="lang-javascript"><span class="hljs-comment">// Receives an error</span>
+						<pre><code class="language-javascript"><span class="hljs-comment">// Receives an error</span>
 workerProxy.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> event </span>) </span>{
     <span class="hljs-built_in">console</span>.log( event.type +<span class="hljs-string">': '</span>+ event.data );
-}
-</code></pre>
+}</code></pre>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -149,7 +148,7 @@ workerProxy.onerror = <span class="hljs-function"><span class="hljs-keyword">fun
 					<div class="tsd-signature tsd-kind-icon">onmessage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L316">systemworker.d.ts:316</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L316">systemworker.d.ts:316</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -157,11 +156,10 @@ workerProxy.onerror = <span class="hljs-function"><span class="hljs-keyword">fun
 							<p>Callback for system worker messages.
 							The message can be sent into multiple chunks.</p>
 						</div>
-						<pre><code class="lang-javascript"><span class="hljs-comment">// Receives a message chunck</span>
+						<pre><code class="language-javascript"><span class="hljs-comment">// Receives a message chunck</span>
 workerProxy.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> event </span>) </span>{
     <span class="hljs-built_in">console</span>.log( event.type +<span class="hljs-string">': '</span>+ event.data );
-}
-</code></pre>
+}</code></pre>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -191,18 +189,17 @@ workerProxy.onmessage = <span class="hljs-function"><span class="hljs-keyword">f
 					<div class="tsd-signature tsd-kind-icon">onterminated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L327">systemworker.d.ts:327</a></li>
+							<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L327">systemworker.d.ts:327</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Callback when the external process is terminating.</p>
 						</div>
-						<pre><code class="lang-javascript"><span class="hljs-comment">// Receives an "end" event from system worker</span>
+						<pre><code class="language-javascript"><span class="hljs-comment">// Receives an "end" event from system worker</span>
 workerProxy.onterminated = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> event </span>) </span>{
     <span class="hljs-built_in">console</span>.log( event.type +<span class="hljs-string">': with exitStatus:'</span>+ event.exitStatus );
-}
-</code></pre>
+}</code></pre>
 					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
@@ -239,7 +236,7 @@ workerProxy.onterminated = <span class="hljs-function"><span class="hljs-keyword
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L343">systemworker.d.ts:343</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L343">systemworker.d.ts:343</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -247,15 +244,14 @@ workerProxy.onterminated = <span class="hljs-function"><span class="hljs-keyword
 									<p>Closes the input stream (stdin) of the external process.
 									Useful when an attempt to write in the stdin of the external process with <code>postMessage()</code> is stuck. <code>endOfInput()</code> will release the execution.</p>
 								</div>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Create some data to gzip</span>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Create some data to gzip</span>
 <span class="hljs-keyword">var</span> input = <span class="hljs-keyword">new</span> Buffer( <span class="hljs-string">'abcde'</span>, <span class="hljs-string">'ascii'</span> );
 <span class="hljs-comment">// Create an asynchronous system worker</span>
 <span class="hljs-keyword">var</span> worker = <span class="hljs-keyword">new</span> SystemWorker( <span class="hljs-string">'gzip'</span> );
 <span class="hljs-comment">// Send the compressed file on stdin.</span>
 worker.postMessage( input );
 <span class="hljs-comment">// Note that we call endOfInput() to indicate we're done. gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.</span>
-worker.endOfInput();
-</code></pre>
+worker.endOfInput();</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -271,7 +267,7 @@ worker.endOfInput();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L347">systemworker.d.ts:347</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L347">systemworker.d.ts:347</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -294,20 +290,19 @@ worker.endOfInput();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L360">systemworker.d.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L360">systemworker.d.ts:360</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Write on the input stream (stdin) of the external process.</p>
 								</div>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Create an asynchronous system worker</span>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Create an asynchronous system worker</span>
 <span class="hljs-keyword">var</span> worker = <span class="hljs-keyword">new</span> SystemWorker( <span class="hljs-string">'gzip'</span> );
 <span class="hljs-comment">// Send the compressed file on stdin.</span>
 worker.postMessage( <span class="hljs-string">'abcde'</span> );
 <span class="hljs-comment">// Note that we call endOfInput() to indicate we're done. gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.</span>
-worker.endOfInput();
-</code></pre>
+worker.endOfInput();</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -320,22 +315,21 @@ worker.endOfInput();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L375">systemworker.d.ts:375</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L375">systemworker.d.ts:375</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Write on the input stream (stdin) of the external process.</p>
 								</div>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// Create some data to gzip</span>
+								<pre><code class="language-javascript"><span class="hljs-comment">// Create some data to gzip</span>
 <span class="hljs-keyword">var</span> input = <span class="hljs-keyword">new</span> Buffer( <span class="hljs-string">'abcde'</span>, <span class="hljs-string">'ascii'</span> );
 <span class="hljs-comment">// Create an asynchronous system worker</span>
 <span class="hljs-keyword">var</span> worker = <span class="hljs-keyword">new</span> SystemWorker( <span class="hljs-string">'gzip'</span> );
 <span class="hljs-comment">// Send the compressed file on stdin.</span>
 worker.postMessage( input );
 <span class="hljs-comment">// Note that we call endOfInput() to indicate we're done. gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.</span>
-worker.endOfInput();
-</code></pre>
+worker.endOfInput();</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -357,15 +351,14 @@ worker.endOfInput();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L385">systemworker.d.ts:385</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L385">systemworker.d.ts:385</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Set the type of data exchanged in the SystemWorker through the onmessage and onerror properties.</p>
 								</div>
-								<pre><code class="lang-javascript">workerProxy.setBinary(<span class="hljs-literal">true</span>);
-</code></pre>
+								<pre><code class="language-javascript">workerProxy.setBinary(<span class="hljs-literal">true</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -390,16 +383,15 @@ worker.endOfInput();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L397">systemworker.d.ts:397</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L397">systemworker.d.ts:397</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Forces the system worker to terminate its execution.</p>
 								</div>
-								<pre><code class="lang-javascript">workerProxy.terminate();
-workerProxy.terminate(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);
-</code></pre>
+								<pre><code class="language-javascript">workerProxy.terminate();
+workerProxy.terminate(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -430,16 +422,15 @@ workerProxy.terminate(<span class="hljs-literal">true</span>, <span class="hljs-
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/systemworker.d.ts#L408">systemworker.d.ts:408</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/systemworker.d.ts#L408">systemworker.d.ts:408</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Wait for the end of the system worker execution.</p>
 								</div>
-								<pre><code class="lang-javascript">workerProxy.wait(<span class="hljs-number">1000</span>);
-workerProxy.wait();
-</code></pre>
+								<pre><code class="language-javascript">workerProxy.wait(<span class="hljs-number">1000</span>);
+workerProxy.wait();</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">

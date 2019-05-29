@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NodeWorker | </title>
+	<title>NodeWorker |  </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title"></a>
+					<a href="../index.html" class="title"> </a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -77,7 +77,7 @@
 						<li>One or more proxies communicating with the worker thread</li>
 					</ul>
 					<h3 id="step-1-define-the-node-worker">Step 1: Define the node worker</h3>
-					<pre><code class="lang-javascript"><span class="hljs-comment">// PROJECT/worker.js</span>
+					<pre><code class="language-javascript"><span class="hljs-comment">// PROJECT/worker.js</span>
 <span class="hljs-comment">// onconnect is called everytime a new worker proxy is created</span>
 onconnect = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> event </span>)
 </span>{
@@ -119,27 +119,23 @@ onconnect = <span class="hljs-function"><span class="hljs-keyword">function</spa
                 <span class="hljs-keyword">break</span>;
         }
     }
-}
-</code></pre>
+}</code></pre>
 					<h4 id="how-to-require-a-node-module-">How to require a node module ?</h4>
 					<p>The module should be defined in <code>PROJECT/node_modules</code></p>
-					<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myModule = requireNode( <span class="hljs-string">'myModule'</span> );
-</code></pre>
+					<pre><code class="language-javascript"><span class="hljs-keyword">var</span> myModule = requireNode( <span class="hljs-string">'myModule'</span> );</code></pre>
 					<h4 id="how-to-require-a-wakanda-module-">How to require a wakanda module ?</h4>
 					<p>The module should be defined in <code>PROJECT/modules</code></p>
-					<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myModule = <span class="hljs-built_in">require</span>( <span class="hljs-string">'myModule'</span> );
-</code></pre>
+					<pre><code class="language-javascript"><span class="hljs-keyword">var</span> myModule = <span class="hljs-built_in">require</span>( <span class="hljs-string">'myModule'</span> );</code></pre>
 					<h3 id="step-2-create-the-node-worker-thread-and-get-the-worker-proxy">Step 2: Create the node worker thread and get the worker proxy</h3>
-					<pre><code class="lang-javascript"><span class="hljs-comment">// PROJECT/proxy.js</span>
+					<pre><code class="language-javascript"><span class="hljs-comment">// PROJECT/proxy.js</span>
 <span class="hljs-comment">// Create a new NodeWorker and get the proxy worker</span>
 <span class="hljs-keyword">var</span> myWorkerProxy = <span class="hljs-keyword">new</span> NodeWorker( <span class="hljs-string">'backend/worker.js'</span>, <span class="hljs-string">'my-worker-name'</span> );
 <span class="hljs-comment">// Get the proxy worker port for communication</span>
 <span class="hljs-keyword">var</span> workerProxyPort = myWorkerProxy.port;
 <span class="hljs-comment">// Send a "hello" message to the worker</span>
-workerProxyPort.postMessage( {<span class="hljs-attr">type</span>: <span class="hljs-string">'hello'</span>, <span class="hljs-attr">says</span>: <span class="hljs-string">'Hello worker !'</span>} );
-</code></pre>
+workerProxyPort.postMessage( {<span class="hljs-attr">type</span>: <span class="hljs-string">'hello'</span>, <span class="hljs-attr">says</span>: <span class="hljs-string">'Hello worker !'</span>} );</code></pre>
 					<h3 id="step-3-listen-for-node-worker-messages">Step 3: Listen for node worker messages</h3>
-					<pre><code class="lang-javascript"><span class="hljs-comment">// PROJECT/proxy.js</span>
+					<pre><code class="language-javascript"><span class="hljs-comment">// PROJECT/proxy.js</span>
 <span class="hljs-comment">// Listen for worker thread messages</span>
 workerProxyPort.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> event </span>)
 </span>{
@@ -166,8 +162,7 @@ workerProxyPort.onmessage = <span class="hljs-function"><span class="hljs-keywor
             <span class="hljs-keyword">break</span>;
     }
 }
-wait();
-</code></pre>
+wait();</code></pre>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -203,7 +198,7 @@ wait();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/nodeworker.d.ts#L118">nodeworker.d.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/nodeworker.d.ts#L118">nodeworker.d.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -212,9 +207,8 @@ wait();
 										Creates a new node worker in its own thread if it does not exist yet. Then it returns a proxy object to communicate with the node worker thread.
 									Node workers can be addressed from any thread, they are uniquely identified by their path and name.</p>
 								</div>
-								<pre><code class="lang-javascript"><span class="hljs-comment">// "worker.js" is defined in PROJECT/worker.js</span>
-<span class="hljs-keyword">var</span> myWorkerProxy = <span class="hljs-keyword">new</span> NodeWorker( <span class="hljs-string">'backend/worker.js'</span>, <span class="hljs-string">'my-worker-name'</span> );
-</code></pre>
+								<pre><code class="language-javascript"><span class="hljs-comment">// "worker.js" is defined in PROJECT/worker.js</span>
+<span class="hljs-keyword">var</span> myWorkerProxy = <span class="hljs-keyword">new</span> NodeWorker( <span class="hljs-string">'backend/worker.js'</span>, <span class="hljs-string">'my-worker-name'</span> );</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">

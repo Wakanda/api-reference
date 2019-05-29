@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Entity | </title>
+	<title>Entity |  </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title"></a>
+					<a href="../index.html" class="title"> </a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -115,14 +115,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L10">datastoreentity.d.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L10">datastoreentity.d.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns the datastore class (object of the DatastoreClass type) of the entity.</p>
 								</div>
-								<h4 id="for-more-information-go-here-entitycollection-html-getdataclass-">For more information go <a href="entitycollection.html#getdataclass">here</a></h4>
+								<h4 id="for-more-information-go-here">For more information go <a href="entitycollection.html#getdataclass">here</a></h4>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="datastoreclass.html" class="tsd-signature-type">DatastoreClass</a></h4>
 						</li>
@@ -138,15 +138,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L231">datastoreentity.d.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L231">datastoreentity.d.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>The getKey( ) method returns the primary key value of the entity to which it is applied.</p>
-									<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> ent = ds.Person.find(<span class="hljs-string">"name = :1"</span>, <span class="hljs-string">"Smith"</span>);
-    <span class="hljs-keyword">var</span> key = ent.getKey();
-</code></pre>
+									<pre><code class="language-javascript">    <span class="hljs-keyword">var</span> ent = ds.Person.find(<span class="hljs-string">"name = :1"</span>, <span class="hljs-string">"Smith"</span>);
+    <span class="hljs-keyword">var</span> key = ent.getKey();</code></pre>
 									<p>This method is useful to identify the entity to update for instance.
 									The KEY value is also needed when you pass a POST request</p>
 								</div>
@@ -165,7 +164,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L314">datastoreentity.d.ts:314</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L314">datastoreentity.d.ts:314</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,7 +176,7 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span></h4>
 							<p>Array of attributes</p>
 							<h4 id="example-in-a-dataclass-validate-event">Example in a Dataclass Validate Event</h4>
-							<pre><code class="lang-javascript">model.Invoice.events.validate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+							<pre><code class="language-javascript">model.Invoice.events.validate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
           <span class="hljs-comment">//get the array of attributes that were changed</span>
   <span class="hljs-keyword">var</span> attributeMods = <span class="hljs-keyword">this</span>.getModifiedAttributes();
      <span class="hljs-comment">//cycle through them</span>
@@ -191,14 +190,12 @@
       }
   });
   <span class="hljs-keyword">return</span> result; <span class="hljs-comment">//return result regardless</span>
-}
-</code></pre>
-							<pre><code class="lang-javascript"> <span class="hljs-comment">//Then each time you perform a save action the entity will go through this validation process</span>
+}</code></pre>
+							<pre><code class="language-javascript"> <span class="hljs-comment">//Then each time you perform a save action the entity will go through this validation process</span>
  <span class="hljs-keyword">var</span> a = ds.Invoice.first();
  a.ID = <span class="hljs-number">12</span>;
  a.save();
- <span class="hljs-comment">// Running this will thow the error message 'Invalid Change !</span>
-</code></pre>
+ <span class="hljs-comment">// Running this will thow the error message 'Invalid Change !</span></code></pre>
 						</li>
 					</ul>
 				</section>
@@ -212,7 +209,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L243">datastoreentity.d.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L243">datastoreentity.d.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -238,7 +235,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L20">datastoreentity.d.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L20">datastoreentity.d.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -261,7 +258,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L28">datastoreentity.d.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L28">datastoreentity.d.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -283,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L47">datastoreentity.d.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L47">datastoreentity.d.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -294,12 +291,11 @@
 									This method always returns True for a new entity.</p>
 								</div>
 								<h4 id="example">Example</h4>
-								<pre><code class="lang-javascript">emp = ds.Employee.first();
+								<pre><code class="language-javascript">emp = ds.Employee.first();
    <span class="hljs-comment">//... process the data in the entity</span>
 <span class="hljs-keyword">if</span> (emp.isModified())     <span class="hljs-comment">// if at least one of the attributes has been changed</span>
 emp.save();
-<span class="hljs-comment">// otherwise, no need to save the entity</span>
-</code></pre>
+<span class="hljs-comment">// otherwise, no need to save the entity</span></code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
 						</li>
@@ -315,7 +311,7 @@ emp.save();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L55">datastoreentity.d.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L55">datastoreentity.d.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -337,7 +333,7 @@ emp.save();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L261">datastoreentity.d.ts:261</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L261">datastoreentity.d.ts:261</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -370,7 +366,7 @@ emp.save();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L83">datastoreentity.d.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L83">datastoreentity.d.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -378,16 +374,15 @@ emp.save();
 									<p>puts the entity pointer on the next entity within an iteration of entities</p>
 								</div>
 								<h4 id="example-with-a-for-loop">Example with a <code>for</code> loop</h4>
-								<pre><code class="lang-javascript"> <span class="hljs-keyword">var</span> myColl = ds.People.query(<span class="hljs-string">"nationality = :1"</span>, <span class="hljs-string">"FR"</span>);
+								<pre><code class="language-javascript"> <span class="hljs-keyword">var</span> myColl = ds.People.query(<span class="hljs-string">"nationality = :1"</span>, <span class="hljs-string">"FR"</span>);
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> onePerson = myColl.first(); onePerson != <span class="hljs-literal">null</span>; onePerson=onePerson.next())
 <span class="hljs-comment">// onePerson will return null after the last entity of the collection</span>
 {
 onePerson.name = onePerson.name.toUpperCase();
 onePerson.save();
-}
-</code></pre>
-								<h4 id="same-example-with-while-">Same Example with <code>while</code></h4>
-								<p>```javascript
+}</code></pre>
+								<h4 id="same-example-with-while">Same Example with <code>while</code></h4>
+								<p><code>`</code>javascript
 									var myColl = ds.People.query(&quot;nationality = :1&quot;, &quot;FR&quot;);
 									var onePerson = myColl.first();
 									while (onePerson != null)
@@ -411,7 +406,7 @@ onePerson.save();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L105">datastoreentity.d.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L105">datastoreentity.d.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -424,14 +419,13 @@ onePerson.save();
 										<h4 id="note-this-method-is-useful-">Note : This method is useful :</h4>
 										<ul>
 											<li>when you attempt to save an entity but receive an error because this entity was modified in the meantime by another user</li>
-											<li>when adding new related entities (see below):<pre><code class="lang-javascript"><span class="hljs-comment">///For instance, if you have classes with a company/employee relationship...</span>
+											<li>when adding new related entities (see below):<pre><code class="language-javascript"><span class="hljs-comment">///For instance, if you have classes with a company/employee relationship...</span>
 <span class="hljs-comment">///If you get a collection of the employees related to a company like this:</span>
 locationsColl_Before = company.locations; <span class="hljs-comment">//3 locations</span>
 <span class="hljs-comment">//Then you create a new location related to the company.  You might expect calling this again:</span>
 locationsColl_After = company.locations; <span class="hljs-comment">//3 locations</span>
 <span class="hljs-comment">//It will not, it will still return the original 3.  In order to get all 4 locations related to the company you need to refresh:</span>
-company.refresh();  locationsColl_AfterRefresh = company.locations; <span class="hljs-comment">//4 locations</span>
-</code></pre>
+company.refresh();  locationsColl_AfterRefresh = company.locations; <span class="hljs-comment">//4 locations</span></code></pre>
 											</li>
 										</ul>
 									</dd>
@@ -451,29 +445,27 @@ company.refresh();  locationsColl_AfterRefresh = company.locations; <span class=
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L134">datastoreentity.d.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L134">datastoreentity.d.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>releases the entity from memory</p>
 								</div>
-								<p><details> <summary><strong>Note</strong> : How to use this method (advanced) : </summary></p>
-								<hr>
-								<pre><code>Once unloaded by this method, the entity is <span class="hljs-keyword">not</span> unusable.
-Wakanda keeps a reference <span class="hljs-keyword">to</span> the entity <span class="hljs-keyword">and</span> automatically reloads it as soon as it becomes used again.
-This utility method lets you optimize memory consumption when the<span class="hljs-built_in"> server </span>needs <span class="hljs-keyword">to</span> load <span class="hljs-keyword">and</span> work with numerous large objects, such as pictures <span class="hljs-keyword">or</span> BLOBs.
-
-<span class="hljs-keyword">In</span> principle, the garbage collection mechanism of JavaScript will purge unused objects <span class="hljs-keyword">from</span> memory. However, this mechanism operates * * autonomously <span class="hljs-keyword">and</span> can prove <span class="hljs-keyword">to</span> be insufficient <span class="hljs-keyword">in</span> some cases. <span class="hljs-keyword">For</span> example, when the<span class="hljs-built_in"> server </span>has loaded dozens of large pictures on the JavaScript side, only references are handled, which may <span class="hljs-keyword">not</span> require the intervention of the garbage collector.
-
-However, on the<span class="hljs-built_in"> server </span>side, the memory is <span class="hljs-keyword">in</span> high demand. <span class="hljs-keyword">In</span> a case like this, it is useful <span class="hljs-keyword">to</span> be able <span class="hljs-keyword">to</span> <span class="hljs-string">"force"</span> entities <span class="hljs-keyword">to</span> be unloaded using the release( ) method.
-<span class="hljs-built_in">
-Note </span>that after calling release( ), <span class="hljs-keyword">if</span> you want <span class="hljs-keyword">to</span> make sure that the JavaScript reference <span class="hljs-keyword">to</span> an entity has been deleted without having <span class="hljs-keyword">to</span> wait <span class="hljs-keyword">for</span> garbage collection (<span class="hljs-keyword">and</span> thus <span class="hljs-keyword">for</span> a subsequent access <span class="hljs-keyword">to</span> the entity <span class="hljs-keyword">to</span> return an error), you must force its value <span class="hljs-keyword">to</span> <span class="hljs-literal">null</span>.
-`
-</code></pre><h4 id="example-">Example :</h4>
-								<pre><code class="lang-javascript">myEntity.release();   <span class="hljs-comment">//unload the entity from the server</span>
-myEntity = <span class="hljs-literal">null</span>;     <span class="hljs-comment">// delete its reference</span>
-</code></pre>
+								<details> <summary>**Note** : How to use this method (advanced) : </summary>
+									***
+									```
+									Once unloaded by this method, the entity is not unusable.
+									Wakanda keeps a reference to the entity and automatically reloads it as soon as it becomes used again.
+									This utility method lets you optimize memory consumption when the server needs to load and work with numerous large objects, such as pictures or BLOBs.
+									<p>In principle, the garbage collection mechanism of JavaScript will purge unused objects from memory. However, this mechanism operates * * autonomously and can prove to be insufficient in some cases. For example, when the server has loaded dozens of large pictures on the JavaScript side, only references are handled, which may not require the intervention of the garbage collector.</p>
+									<p>However, on the server side, the memory is in high demand. In a case like this, it is useful to be able to &quot;force&quot; entities to be unloaded using the release( ) method.</p>
+									<p>Note that after calling release( ), if you want to make sure that the JavaScript reference to an entity has been deleted without having to wait for garbage collection (and thus for a subsequent access to the entity to return an error), you must force its value to null.</p>
+									<pre><code class="language-`">
+#### Example :
+```javascript
+myEntity.release();   //unload the entity from the server
+myEntity = null;     // delete its reference</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -489,7 +481,7 @@ myEntity = <span class="hljs-literal">null</span>;     <span class="hljs-comment
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L149">datastoreentity.d.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L149">datastoreentity.d.ts:149</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -514,7 +506,7 @@ myEntity = <span class="hljs-literal">null</span>;     <span class="hljs-comment
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L206">datastoreentity.d.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L206">datastoreentity.d.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -522,20 +514,18 @@ myEntity = <span class="hljs-literal">null</span>;     <span class="hljs-comment
 									<p>Saves the changes made to the entity in the datastore</p>
 								</div>
 								<p><strong>How to update an existing entity :</strong></p>
-								<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> a = ds.Employee.first();
+								<pre><code class="language-javascript"><span class="hljs-keyword">var</span> a = ds.Employee.first();
 a.firstname = <span class="hljs-string">"MyNewFirstName"</span> ;
 a.lastname =  <span class="hljs-string">"MyNewLastName"</span> ;
-a.save();
-</code></pre>
+a.save();</code></pre>
 								<p><strong>How to create then save an entity:</strong></p>
-								<pre><code class="lang-javascript"><span class="hljs-keyword">new</span> ds.Employee(
+								<pre><code class="language-javascript"><span class="hljs-keyword">new</span> ds.Employee(
 {
     <span class="hljs-attr">firstname</span> : <span class="hljs-string">"MyNewFirstName"</span> ,
     <span class="hljs-attr">lastname</span>  : <span class="hljs-string">"MyNewLastName"</span>
-}).save();
-</code></pre>
-								<p></p></p>
-								<hr>
+}).save();</code></pre>
+								</p>
+								***
 								<h4 id="events">Events</h4>
 								<p>When executing a save() action, on the server side the events (if defined) are performed in the following order :</p>
 								<ol>
@@ -545,7 +535,7 @@ a.save();
 									<li>save on each attribute</li>
 								</ol>
 								<h4 id="example">Example</h4>
-								<pre><code class="lang-javascript"><span class="hljs-comment">//You can intercept and manage the error returned by the engine when the entity's internal stamp being saved is different from the one that is saved in the data</span>
+								<pre><code class="language-javascript"><span class="hljs-comment">//You can intercept and manage the error returned by the engine when the entity's internal stamp being saved is different from the one that is saved in the data</span>
 <span class="hljs-comment">//To do this, you can place the save statement in a try/catch type structure. For example:</span>
 <span class="hljs-comment">// select an entity and change its name to uppercase</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toUpperEmployee</span>(<span class="hljs-params">lastName, firstName</span>)
@@ -558,8 +548,7 @@ emp.lastName.toUppercase();
 }
 <span class="hljs-keyword">catch</span>(e)
 {  ... <span class="hljs-comment">// put the error-processing code here</span>
-}
-</code></pre>
+}</code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -575,7 +564,7 @@ emp.lastName.toUppercase();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L215">datastoreentity.d.ts:215</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L215">datastoreentity.d.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -598,7 +587,7 @@ emp.lastName.toUppercase();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L277">datastoreentity.d.ts:277</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L277">datastoreentity.d.ts:277</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -631,7 +620,7 @@ emp.lastName.toUppercase();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/935c21a/src/api/datastoreentity.d.ts#L367">datastoreentity.d.ts:367</a></li>
+									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/datastoreentity.d.ts#L367">datastoreentity.d.ts:367</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -643,40 +632,40 @@ emp.lastName.toUppercase();
 									<dt>warning</dt>
 									<dd><p>Keep in mind that the entity is not saved until you actually call the save( ) method.</p>
 										<p></br> </p></p>
-										<p><details></p>
-										<summary>
-											<h4 id="validation-example-click-to-expand-">Validation  Example (click to Expand)</h4>
-										<p></summary></p>
-										<pre><code class="lang-javascript"><span class="hljs-comment">// first let's create a dataclass validate event</span>
-model.Elem.events.validate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) //<span class="hljs-title">onValidate</span> <span class="hljs-title">until</span> <span class="hljs-title">Wakanda</span> <span class="hljs-title">v8</span>
-</span>{
-<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.name == <span class="hljs-string">"Unknown"</span>) {
-   <span class="hljs-keyword">return</span> {
-       <span class="hljs-attr">error</span>: <span class="hljs-number">100</span>, <span class="hljs-comment">// an object with 'error' will make validation fail</span>
-       errorMessage: <span class="hljs-string">"The name cannot be 'Unknown'"</span>
-   };
-}
-}
-</code></pre>
-										<p>Then you could create a datastore class method</p>
-										<pre><code class="lang-javascript">checkValidity:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)
-</span>{
-<span class="hljs-keyword">try</span> {
-<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.validate(); <span class="hljs-comment">// returns true if successful</span>
-}
-<span class="hljs-keyword">catch</span> (e) {
-<span class="hljs-keyword">throw</span> { <span class="hljs-comment">// if fail</span>
-<span class="hljs-comment">// send an exception with the customized message</span>
-<span class="hljs-comment">// from the error stack</span>
-message: e.messages[e.messages.length - <span class="hljs-number">1</span>]
-
-};
-}
-}
-<span class="hljs-comment">//Finally you would simply call your Validation process by calling</span>
- <span class="hljs-comment">// - the validate() method (server side) or ,</span>
-<span class="hljs-comment">//  - the CheckValidity class method (server side or client side)</span>
-</code></pre>
+										<details>
+											<summary>
+												<h4 id="validation-example-click-to-expand-">Validation  Example (click to Expand)</h4>
+											</summary>
+											```javascript
+											// first let's create a dataclass validate event
+											model.Elem.events.validate = function(event) //onValidate until Wakanda v8
+											{
+											if (this.name == "Unknown") {
+											return {
+											error: 100, // an object with 'error' will make validation fail
+											errorMessage: "The name cannot be 'Unknown'"
+											};
+											}
+											} ```
+											Then you could create a datastore class method
+											```javascript
+											checkValidity:function()
+											{
+											try {
+											return this.validate(); // returns true if successful
+											}
+											catch (e) {
+											throw { // if fail
+											// send an exception with the customized message
+											// from the error stack
+											message: e.messages[e.messages.length - 1]
+											<p>};
+												}
+												}
+												//Finally you would simply call your Validation process by calling
+												// - the validate() method (server side) or ,
+												//  - the CheckValidity class method (server side or client side)
+											<code>`</code></p>
 									</dd>
 								</dl>
 							</div>

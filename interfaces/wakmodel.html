@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WAKMutexProxy |  </title>
+	<title>WakModel |  </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="wakmutexproxy.html">WAKMutexProxy</a>
+					<a href="wakmodel.html">WakModel</a>
 				</li>
 			</ul>
-			<h1>Interface WAKMutexProxy</h1>
+			<h1>Interface WakModel</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">WAKMutexProxy</span>
+						<span class="target">WakModel</span>
 					</li>
 				</ul>
 			</section>
@@ -81,9 +81,8 @@
 						<section class="tsd-index-section tsd-is-external tsd-is-not-exported">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#lock" class="tsd-kind-icon">lock</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#trytolock" class="tsd-kind-icon">try<wbr>ToLock</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmutexproxy.html#unlock" class="tsd-kind-icon">unlock</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmodel.html#onrequesttimeout" class="tsd-kind-icon">on<wbr>Request<wbr>Timeout</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported"><a href="wakmodel.html#onsendrequest" class="tsd-kind-icon">on<wbr>Send<wbr>Request</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,78 +91,95 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external tsd-is-not-exported">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="lock" class="tsd-anchor"></a>
-					<h3>lock</h3>
+					<a name="onrequesttimeout" class="tsd-anchor"></a>
+					<h3>on<wbr>Request<wbr>Timeout</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">lock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Request<wbr>Timeout<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="wakmodelrequest.html" class="tsd-signature-type">WakModelRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/mutex.d.ts#L28">mutex.d.ts:28</a></li>
+									<li>Defined in model.d.ts:101</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Locks the mutex or wait until it has been released to lock it; the thread execution is paused until then.</p>
+									<p>Event to handle REST request timeouts to a remote 4D server.</p>
 								</div>
-								<pre><code class="language-javascript"><span class="hljs-keyword">var</span> writeMutex = Mutex(<span class="hljs-string">'writeMutex'</span>);
-writeMutex.lock();</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>warning</dt>
+									<dd><p>This is an enterprise feature <br><br></p>
+									</dd>
+								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
-							<p>Returns <code>true</code> if the mutex is locked</p>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>request: <a href="wakmodelrequest.html" class="tsd-signature-type">WakModelRequest</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The request object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="trytolock" class="tsd-anchor"></a>
-					<h3>try<wbr>ToLock</h3>
+					<a name="onsendrequest" class="tsd-anchor"></a>
+					<h3>on<wbr>Send<wbr>Request</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">try<wbr>ToLock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Send<wbr>Request<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="wakmodelrequest.html" class="tsd-signature-type">WakModelRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/mutex.d.ts#L39">mutex.d.ts:39</a></li>
+									<li>Defined in model.d.ts:93</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Tries to lock the mutex or returns false if it is already locked. The thread execution is not paused.</p>
+									<p>Event to customize REST requests to a remote 4D server on the fly.</p>
 								</div>
-								<pre><code class="language-javascript"><span class="hljs-keyword">var</span> writeMutex = Mutex(<span class="hljs-string">'writeMutex'</span>);
-writeMutex.tryToLock();</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>warning</dt>
+									<dd><p>This is an enterprise feature <br><br></p>
+										<p>You can customize requests by using <code>onSendRequest</code> in the remote model in the model.js file. The <code>onSendRequest</code> is called from all exiting requests.</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p><br><br></p>
+										<pre><code class="language-javascript">model.onSendRequest = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">request</span>) </span>{
+    <span class="hljs-comment">// request properties:</span>
+    request.url;
+    <span class="hljs-comment">// raw url string</span>
+    request.host;
+    request.port;
+    request.path;
+    request.query;
+    request.parameters;
+    request.method;
+    <span class="hljs-comment">// request method string ("GET", "POST", "DELETE", ...)</span>
+    request.ssl;
+
+    <span class="hljs-comment">// request headers getter and setter</span>
+    request.getHeader(<span class="hljs-string">"Custom-Header"</span>);
+    request.setHeader(<span class="hljs-string">"Custom-Header"</span>, <span class="hljs-string">"a_token"</span>);
+};</code></pre>
+									</dd>
+								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
-							<p>Returns <code>true</code> if the mutex is locked, <code>false</code> otherwise</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-					<a name="unlock" class="tsd-anchor"></a>
-					<h3>unlock</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">unlock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Wakanda/api-reference/blob/f93522a/src/api/mutex.d.ts#L51">mutex.d.ts:51</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Unlock the mutex. The mutex must be lock in the same thread to be unlock.</p>
-								</div>
-								<pre><code class="language-javascript"><span class="hljs-keyword">var</span> writeMutex = Mutex(<span class="hljs-string">'writeMutex'</span>);
-writeMutex.lock();
-writeMutex.unlock();</code></pre>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Boolean</span></h4>
-							<p>Returns <code>true</code> if the mutex is unlocked, <code>false</code> otherwise</p>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>request: <a href="wakmodelrequest.html" class="tsd-signature-type">WakModelRequest</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The request object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -182,16 +198,13 @@ writeMutex.unlock();</code></pre>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-external tsd-is-not-exported">
-						<a href="wakmutexproxy.html" class="tsd-kind-icon">WAKMutex<wbr>Proxy</a>
+						<a href="wakmodel.html" class="tsd-kind-icon">Wak<wbr>Model</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="wakmutexproxy.html#lock" class="tsd-kind-icon">lock</a>
+								<a href="wakmodel.html#onrequesttimeout" class="tsd-kind-icon">on<wbr>Request<wbr>Timeout</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="wakmutexproxy.html#trytolock" class="tsd-kind-icon">try<wbr>ToLock</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external tsd-is-not-exported">
-								<a href="wakmutexproxy.html#unlock" class="tsd-kind-icon">unlock</a>
+								<a href="wakmodel.html#onsendrequest" class="tsd-kind-icon">on<wbr>Send<wbr>Request</a>
 							</li>
 						</ul>
 					</li>

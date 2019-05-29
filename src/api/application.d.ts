@@ -5,6 +5,7 @@
 /// <reference path="./connectionsessioninfo.d.ts" />
 /// <reference path="./console.d.ts" />
 /// <reference path="./datastore.d.ts" />
+/// <reference path="./model.d.ts" />
 /// <reference path="./directory.d.ts" />
 /// <reference path="./file.d.ts" />
 /// <reference path="./folder.d.ts" />
@@ -39,6 +40,10 @@ interface WAKData {
      * References the datastore of the application.
      */
     ds: Datastore;
+    /**
+     * References the model object of the application
+     */
+    model: WakModel;
     /**
     *Starts the backup of the closed datastore defined by model and data.
     */

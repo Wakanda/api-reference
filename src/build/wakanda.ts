@@ -1,5 +1,6 @@
 
 
+
 /*
  * Properties
  */
@@ -26,7 +27,7 @@ var Mutex = application.Mutex;
 // var ProgressIndicator = application.ProgressIndicator;
 // var XmlToJSON = application.XmlToJSON;
 // var addHttpRequestHandler = application.addHttpRequestHandler;
-var addRemoteStore = application.addRemoteStore;
+// var addRemoteStore = application.addRemoteStore;
 var backupDataStore = application.backupDataStore;
 // var clearInterval = application.clearInterval;
 // var clearTimeout = application.clearTimeout;
@@ -64,7 +65,7 @@ var loadText = application.loadText;
 // var loginByKey = application.loginByKey;
 // var loginByPassword = application.loginByPassword;
 // var logout = application.logout;
-var openRemoteStore = application.openRemoteStore;
+// var openRemoteStore = application.openRemoteStore;
 // var removeHttpRequestHandler = application.removeHttpRequestHandler;
 var repairDataStore = application.repairDataStore;
 // var requestFileSystemSync = application.requestFileSystemSync;
@@ -95,6 +96,7 @@ var SystemWorker = application.SystemWorker;
 var TextStream = application.TextStream;
 // var Worker = application.Worker;
 var XMLHttpRequest = application.XMLHttpRequest;
+
 
 
 
@@ -1660,7 +1662,7 @@ interface DatastoreClass {
 	*
 	*
 	* @warning :
-	* ````text
+	* ```plaintext
 	*	- This folder must contain UTF-8 text files into which each entity is described through a single JSON object
 	*	- calculated attributes cannot be imported directly -- only their underlying attributes are imported,
 	*	- extended datastore class entities cannot be imported,
@@ -2231,7 +2233,7 @@ interface Entity {
 	 *  // Running this will thow the error message 'Invalid Change !
 	 * ```
 	 */
-	getModifiedAttributes() : Array;
+	getModifiedAttributes() : Array<string>;
 
 
 
@@ -5858,7 +5860,7 @@ interface XMLHttpRequest {
      * Defines the event listener function that will handle the various states of the XMLHttpRequest.
      * See [doc center](http://doc.wakanda.org/home2.en.html#/Wakanda Studio/0.Beta/readyState.303-867831.en.html) for more details about xhr states.
      */
-    onreadystatechange: (this: XMLHttpRequest, event: Event) => any;
+    onreadystatechange: (this: XMLHttpRequest, event: any) => any;
     /**
      * Returns all HTTP headers from the response of the XMLHttprequest.
      */

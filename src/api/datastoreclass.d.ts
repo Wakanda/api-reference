@@ -415,7 +415,7 @@ interface DatastoreClass {
 	*
 	*
 	* @warning :
-	* ````text
+	* ```plaintext
 	*	- This folder must contain UTF-8 text files into which each entity is described through a single JSON object
 	*	- calculated attributes cannot be imported directly -- only their underlying attributes are imported,
 	*	- extended datastore class entities cannot be imported,

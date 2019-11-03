@@ -73,7 +73,7 @@ interface XMLHttpRequest {
      * Defines the event listener function that will handle the various states of the XMLHttpRequest.
      * See [doc center](http://doc.wakanda.org/home2.en.html#/Wakanda Studio/0.Beta/readyState.303-867831.en.html) for more details about xhr states.
      */
-    onreadystatechange: (this: XMLHttpRequest, event: Event) => any;
+    onreadystatechange: (this: XMLHttpRequest, event: any) => any;
     /**
      * Returns all HTTP headers from the response of the XMLHttprequest.
      */

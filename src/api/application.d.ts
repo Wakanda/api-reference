@@ -1,3 +1,4 @@
+/// <reference path="../lib/lib.core.d.ts" />
 /// <reference path="./binarystream.d.ts" />
 /// <reference path="./blob.d.ts" />
 /// <reference path="./buffer.d.ts" />

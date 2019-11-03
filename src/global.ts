@@ -1,3 +1,4 @@
+/// <reference path="./lib/lib.core.d.ts" />
 /// <reference path="./api/application.d.ts" />
 
 /*
@@ -26,7 +27,7 @@ var Mutex = application.Mutex;
 // var ProgressIndicator = application.ProgressIndicator;
 // var XmlToJSON = application.XmlToJSON;
 // var addHttpRequestHandler = application.addHttpRequestHandler;
-var addRemoteStore = application.addRemoteStore;
+// var addRemoteStore = application.addRemoteStore;
 var backupDataStore = application.backupDataStore;
 // var clearInterval = application.clearInterval;
 // var clearTimeout = application.clearTimeout;
@@ -64,7 +65,7 @@ var loadText = application.loadText;
 // var loginByKey = application.loginByKey;
 // var loginByPassword = application.loginByPassword;
 // var logout = application.logout;
-var openRemoteStore = application.openRemoteStore;
+// var openRemoteStore = application.openRemoteStore;
 // var removeHttpRequestHandler = application.removeHttpRequestHandler;
 var repairDataStore = application.repairDataStore;
 // var requestFileSystemSync = application.requestFileSystemSync;

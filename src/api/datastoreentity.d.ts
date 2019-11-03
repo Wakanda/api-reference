@@ -311,7 +311,7 @@ interface Entity {
 	 *  // Running this will thow the error message 'Invalid Change !
 	 * ```
 	 */
-	getModifiedAttributes() : Array;
+	getModifiedAttributes() : Array<string>;
 
 
 
